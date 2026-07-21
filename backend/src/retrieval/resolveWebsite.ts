@@ -33,10 +33,10 @@ export type ResolveBrandWebsiteResult = {
 const CCTLD_SUFFIXES = ['.in', '.com', '.co.in'] as const;
 
 
-/** Known official domains for high-traffic India retail / CPG brands. */
+/** Known official domains — prefer India TLD / /in/ storefronts. */
 const KNOWN_OFFICIAL_DOMAINS: Record<string, string> = {
-  bata: 'https://www.bata.com/in/',
-  'bata india': 'https://www.bata.com/in/',
+  bata: 'https://www.bata.in/',
+  'bata india': 'https://www.bata.in/',
   'third wave coffee': 'https://www.thirdwavecoffeeroasters.com',
   'third wave': 'https://www.thirdwavecoffeeroasters.com',
   britannia: 'https://www.britannia.co.in',

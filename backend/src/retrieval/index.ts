@@ -31,8 +31,15 @@ export {
 } from './websiteCache.js';
 export { fetchEvidenceDocument, fetchEvidenceDocuments } from './fetchEvidence.js';
 export { materializeEvidence, MIN_ARTICLE_CHARS } from './materialize.js';
-export { isBrandRelevant, assessBrandRelevance } from './relevance.js';
-export type { RelevanceAssessment, RelevanceRejectionReason } from './relevance.js';
+export {
+  discoverWikipediaCandidate,
+  discoverWikipediaCandidates,
+} from './wikipedia.js';
+export { discoverPublisherViaWebSearch, INDIA_PUBLISHER_HOSTS } from './webSearch.js';
+export {
+  indiaPressSeedCandidates,
+  indiaTopicListingCandidates,
+} from './indiaPressSeeds.js';
 export { dedupeEvidence, dedupeCandidateUrls } from './dedupe.js';
 export {
   normalizeUrl,

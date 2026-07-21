@@ -61,7 +61,12 @@ export function isProbablyArticleUrl(url: string): boolean {
     if (segments.length === 1) {
       const slug = segments[0];
       // Single-segment hubs like "advertising-news.html" already rejected above
-      return slug.length > 40 || /\d{4}/.test(slug) || /article|story|news-/.test(slug);
+      // MediaBrief-style slugs: bata-india-launches-power-move-collection
+      return (
+        slug.length > 24 ||
+        /\d{4}/.test(slug) ||
+        /article|story|news-|campaign|launch|appoint|partner/.test(slug)
+      );
     }
     return false;
   } catch {

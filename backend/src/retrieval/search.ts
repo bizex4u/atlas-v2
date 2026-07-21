@@ -99,25 +99,35 @@ export async function discoverCandidateLinks(options: {
 export async function brandSiteCandidates(
   website: string,
   signal?: AbortSignal,
+  options?: { optimistic?: boolean },
 ): Promise<CandidateLink[]> {
   let base = website.startsWith('http') ? website : `https://${website}`;
+  const optimistic = options?.optimistic ?? true;
 
-  // Resolve redirects (e.g. bata.in → bata.com/in/) with a short timeout
-  const home = await fetchHtml(base, { signal, timeoutMs: 8000 });
+  // Resolve redirects (e.g. bata.in → bata.com/in/) with a longer timeout
+  const home = await fetchHtml(base, { signal, timeoutMs: 18_000 });
   let resolved = false;
   if (home.ok) {
     base = home.url;
     resolved = true;
   } else {
-    // Common regional redirects when apex times out
+    // Common regional redirects when apex times out / 301s empty
     try {
       const host = new URL(base).hostname.replace(/^www\./, '');
-      const alt = `https://www.${host.replace(/\.in$/, '.com')}/in/`;
-      if (alt !== base) {
-        const altHome = await fetchHtml(alt, { signal, timeoutMs: 8000 });
+      const alts = [
+        host.endsWith('.in') && !host.endsWith('.co.in')
+          ? `https://www.${host.replace(/\.in$/, '.com')}/in/`
+          : null,
+        host.includes('bata') ? 'https://www.bata.com/in/' : null,
+        `https://www.${host}/`,
+      ].filter(Boolean) as string[];
+      for (const alt of alts) {
+        if (alt === base) continue;
+        const altHome = await fetchHtml(alt, { signal, timeoutMs: 18_000 });
         if (altHome.ok) {
           base = altHome.url;
           resolved = true;
+          break;
         }
       }
     } catch {
@@ -125,12 +135,23 @@ export async function brandSiteCandidates(
     }
   }
 
-  // Do not invent crawl targets for dead/guessed hosts
-  if (!resolved) return [];
+  // When homepage (+ regional alts) all fail, skip path crawl — dead hosts
+  // (e.g. bata.com bot timeouts) burn the fetch budget before India press seeds.
+  if (!resolved) {
+    if (!optimistic) return [];
+    logWarn('[retrieval] brand site unreachable — skipping path crawl', {
+      website,
+    });
+    return [];
+  }
 
   let origin: string;
+  let pathPrefix = '';
   try {
-    origin = new URL(base).origin;
+    const u = new URL(base);
+    origin = u.origin;
+    // Preserve /in/ storefront prefix (bata.com/in/)
+    if (/^\/in\/?/i.test(u.pathname)) pathPrefix = '/in';
   } catch {
     return [];
   }
@@ -139,15 +160,22 @@ export async function brandSiteCandidates(
     '/',
     '/about',
     '/about-us',
+    '/about-us.html',
+    '/company',
+    '/investors',
+    '/investor-relations',
+    '/press',
+    '/media',
+    '/news',
     '/store-locator',
     '/stores',
-    '/news',
     '/campaigns',
   ];
   const out: CandidateLink[] = [];
   for (const path of paths) {
     try {
-      const url = normalizeUrl(new URL(path, origin + '/').toString());
+      const fullPath = pathPrefix && path === '/' ? `${pathPrefix}/` : `${pathPrefix}${path}`;
+      const url = normalizeUrl(new URL(fullPath, origin + '/').toString());
       if (!url) continue;
       out.push({
         url,

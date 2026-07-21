@@ -6,8 +6,19 @@ import { fetchEvidenceDocuments } from './fetchEvidence.js';
 import { assessBrandRelevance } from './relevance.js';
 import { resolveBrandWebsite } from './resolveWebsite.js';
 import { brandSiteCandidates, discoverCandidateLinks } from './search.js';
-import type { CandidateLink, EvidenceQueryIntent, RetrieveOptions } from './types.js';
-import { discoverWikipediaCandidate } from './wikipedia.js';
+import type {
+  CandidateLink,
+  EvidenceQueryIntent,
+  RetrieveOptions,
+} from './types.js';
+import {
+  indiaPressSeedCandidates,
+  indiaTopicListingCandidates,
+} from './indiaPressSeeds.js';
+import { extractArticleLinksFromHtml } from './parse.js';
+import { fetchHtml } from '../utils/scrape.js';
+import { discoverPublisherViaWebSearch } from './webSearch.js';
+import { discoverWikipediaCandidates } from './wikipedia.js';
 
 const DEFAULT_INTENTS: EvidenceQueryIntent[] = [
   'entity',
@@ -65,23 +76,45 @@ export async function retrieveEvidence(
   const brand = brandName.trim();
   const aliases = expandBrandAliases(brand);
 
-  const publisherLinksRaw = await discoverCandidateLinks({
+  // 1) Curated India press / company pages (highest precision)
+  const seedLinks = indiaPressSeedCandidates(brand);
+
+  // 2) Topic listings → article links (ET topic pages work when DDG is blocked)
+  const topicArticleLinks = await discoverTopicArticles(brand, signal);
+
+  // 3) On-site publisher SERP — skip/limit when seeds already cover the brand
+  //    (on-site search is slow, often robots-blocked, and fills with homepage noise)
+  const haveStrongSeeds = seedLinks.length + topicArticleLinks.length >= 5;
+  const publisherLinksRaw = haveStrongSeeds
+    ? []
+    : await discoverCandidateLinks({
+        brandName: brand,
+        intents,
+        maxCandidates: Math.max(maxDocuments * 2, 12),
+        signal,
+      });
+
+  // 4) DuckDuckGo → India trade press (best-effort; often bot-challenged)
+  const webSearchLinks = haveStrongSeeds
+    ? []
+    : await discoverPublisherViaWebSearch({
+        brandName: brand,
+        maxCandidates: 12,
+        signal,
+      });
+
+  const publisherLinks = prioritizeBrandMentionLinks(
+    [...topicArticleLinks, ...webSearchLinks, ...publisherLinksRaw],
+    aliases,
+  ).filter((l) => brandMentionScore(l, aliases) > 0);
+
+  // 5) Wikipedia — India entity preferred; may be empty for "Bata India"
+  const wikiLinks = await discoverWikipediaCandidates({
     brandName: brand,
-    intents,
-    maxCandidates: Math.max(maxDocuments * 4, 24),
     signal,
   });
 
-  // Prefer publisher URLs/titles that already mention the brand / aliases
-  const publisherLinks = prioritizeBrandMentionLinks(
-    publisherLinksRaw,
-    aliases,
-  );
-
-  const wiki = await discoverWikipediaCandidate({ brandName: brand, signal });
-  const wikiLinks: CandidateLink[] = wiki ? [wiki] : [];
-
-  // Multi-stage official website resolution (replaces guessBrandWebsites)
+  // 6) Official India website (only when homepage reachable)
   const resolved = await resolveBrandWebsite({
     brandName: brand,
     discoveryWebsite: website,
@@ -90,25 +123,36 @@ export async function retrieveEvidence(
 
   const siteLinks =
     resolved.website != null
-      ? await brandSiteCandidates(resolved.website, signal)
+      ? await brandSiteCandidates(resolved.website, signal, {
+          optimistic: true,
+        })
       : [];
 
-  const candidates = [...siteLinks, ...wikiLinks, ...publisherLinks];
+  // Seeds first so fetch budget isn't burned on dead brand-site paths
+  const candidates = [
+    ...seedLinks,
+    ...wikiLinks,
+    ...publisherLinks,
+    ...siteLinks,
+  ];
 
   logInfo('[retrieval] candidates discovered', {
     brand,
     aliases: aliases.slice(0, 8),
-    publisher: publisherLinks.length,
+    indiaPressSeeds: seedLinks.length,
+    topicArticles: topicArticleLinks.length,
+    publisherOnSite: publisherLinksRaw.length,
+    publisherWebSearch: webSearchLinks.length,
+    publisherBrandMention: publisherLinks.length,
+    wikipedia: wikiLinks.length,
     brandSite: siteLinks.length,
     websiteSelected: resolved.website,
     websiteReason: resolved.reason,
-    candidateDomains: resolved.telemetry.candidateDomains.slice(0, 12),
-    domainsAttempted: resolved.telemetry.domainsAttempted.length,
-    domainsResolved: resolved.telemetry.domainsResolved,
+    wikiTitles: wikiLinks.map((w) => w.title),
   });
 
   const fetched = await fetchEvidenceDocuments(candidates, {
-    maxDocuments: Math.max(maxDocuments * 2, maxDocuments + 4),
+    maxDocuments: Math.max(maxDocuments * 2, maxDocuments + 6),
     signal,
     brand,
   });
@@ -129,37 +173,17 @@ export async function retrieveEvidence(
 
   const evidence = dedupeEvidence(relevant).slice(0, maxDocuments);
 
-  const telemetry: RetrievalTelemetry = {
-    brand,
-    aliases,
-    website: {
-      candidateDomains: resolved.telemetry.candidateDomains,
-      domainsAttempted: resolved.telemetry.domainsAttempted,
-      domainsResolved: resolved.telemetry.domainsResolved,
-      selected: resolved.website,
-      reasonSelected: resolved.reason,
-    },
-    publisher: {
-      candidates: publisherLinks.length,
-      fetched: fetched.length,
-      accepted: relevant.length,
-      rejected: rejected.slice(0, 40),
-    },
-    brandSitePages: siteLinks.length,
-    documents: evidence.length,
-    latencyMs: Date.now() - started,
-  };
-
   logInfo('[retrieval] complete', {
-    brand: telemetry.brand,
+    brand,
     fetched: fetched.length,
     relevant: relevant.length,
     documents: evidence.length,
-    latencyMs: telemetry.latencyMs,
-    websiteSelected: telemetry.website.selected,
-    websiteReason: telemetry.website.reasonSelected,
+    latencyMs: Date.now() - started,
+    websiteSelected: resolved.website,
+    websiteReason: resolved.reason,
     publisherRejected: rejected.length,
     rejectionReasons: summarizeReasons(rejected.map((r) => r.reason)),
+    sampleUrls: evidence.slice(0, 8).map((d) => d.canonicalUrl),
   });
 
   if (rejected.length) {
@@ -181,6 +205,37 @@ export async function retrieveEvidence(
   return evidence;
 }
 
+/** Crawl ET/topic listing pages and keep only brand-mentioning article URLs. */
+async function discoverTopicArticles(
+  brandName: string,
+  signal?: AbortSignal,
+): Promise<CandidateLink[]> {
+  const aliases = expandBrandAliases(brandName);
+  const listings = indiaTopicListingCandidates(brandName);
+  const found: CandidateLink[] = [];
+  const seen = new Set<string>();
+
+  for (const listing of listings.slice(0, 2)) {
+    if (signal?.aborted || found.length >= 10) break;
+    const page = await fetchHtml(listing.url, { signal, timeoutMs: 15_000 });
+    if (!page.ok) continue;
+    const links = extractArticleLinksFromHtml(
+      page.html,
+      page.url,
+      'topic_listing',
+    );
+    for (const link of links) {
+      if (found.length >= 10) break;
+      if (seen.has(link.url)) continue;
+      if (brandMentionScore(link, aliases) <= 0) continue;
+      seen.add(link.url);
+      found.push(link);
+    }
+  }
+
+  return found;
+}
+
 function summarizeReasons(reasons: string[]): Record<string, number> {
   const counts: Record<string, number> = {};
   for (const r of reasons) {
@@ -189,19 +244,29 @@ function summarizeReasons(reasons: string[]): Record<string, number> {
   return counts;
 }
 
+function brandMentionScore(link: CandidateLink, aliases: string[]): number {
+  const lowered = aliases.map((a) => a.toLowerCase());
+  const hay = `${link.title ?? ''} ${link.url}`.toLowerCase();
+  let s = 0;
+  for (const a of lowered) {
+    if (a.length >= 3 && hay.includes(a)) s += a.includes(' ') ? 3 : 2;
+  }
+  return s;
+}
+
 /** Rank links whose URL/title mention an alias ahead of generic SERP noise. */
 function prioritizeBrandMentionLinks(
   links: CandidateLink[],
   aliases: string[],
 ): CandidateLink[] {
-  const lowered = aliases.map((a) => a.toLowerCase());
-  const score = (link: CandidateLink): number => {
-    const hay = `${link.title ?? ''} ${link.url}`.toLowerCase();
-    let s = 0;
-    for (const a of lowered) {
-      if (a.length >= 3 && hay.includes(a)) s += a.includes(' ') ? 3 : 2;
-    }
-    return s;
-  };
-  return [...links].sort((a, b) => score(b) - score(a));
+  const seen = new Set<string>();
+  const unique: CandidateLink[] = [];
+  for (const link of links) {
+    if (seen.has(link.url)) continue;
+    seen.add(link.url);
+    unique.push(link);
+  }
+  return unique.sort(
+    (a, b) => brandMentionScore(b, aliases) - brandMentionScore(a, aliases),
+  );
 }
