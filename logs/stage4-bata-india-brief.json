@@ -1,0 +1,86 @@
+{
+  "brand": {
+    "name": {
+      "value": "Bata India",
+      "confidence": "estimated"
+    },
+    "category": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "hq": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "revenue": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "cagr": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "totalStores": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "pricePoint": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "ambassador": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "activeCampaign": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "pillars": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    }
+  },
+  "markets": [],
+  "competitors": {
+    "value": null,
+    "confidence": "needs_input"
+  },
+  "mediaPlan": {
+    "sequencing": [],
+    "seasonalPhases": []
+  },
+  "budget": {
+    "total": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "barterSavings": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "lineItems": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    }
+  },
+  "_meta": {
+    "note": "Run completed under Gemini free-tier daily quota exhaustion (429). Agents correctly returned needs_input rather than fabricating values. Re-run after quota resets for real data quality review.",
+    "brandQueried": "Bata India",
+    "capturedAt": "2026-07-20T16:22:29.348Z",
+    "liveCaptureAt": "2026-07-20T16:28:56.161Z",
+    "source": "sse_complete"
+  }
+}

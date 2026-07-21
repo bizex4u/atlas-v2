@@ -1,0 +1,206 @@
+{
+  "at": "2026-07-21T15:10:12.238Z",
+  "full": true,
+  "results": [
+    {
+      "brand": "Bata India",
+      "aliases": [
+        "Bata India",
+        "Bata",
+        "Bata Limited",
+        "Bata India Ltd",
+        "Bata Shoes",
+        "Bata India Limited"
+      ],
+      "websiteSelected": "https://www.bata.com/in/",
+      "websiteReason": "official_search",
+      "candidateDomains": [
+        "https://www.bata.com/in/"
+      ],
+      "domainsAttempted": 1,
+      "domainsResolved": [],
+      "evidenceRetrieved": 1,
+      "evidenceStored": 1,
+      "sampleUrls": [
+        "https://en.wikipedia.org/wiki/Bata_Corporation"
+      ],
+      "validation": "pass",
+      "populatedFields": 3,
+      "totalScoredFields": 14
+    },
+    {
+      "brand": "Third Wave Coffee",
+      "aliases": [
+        "Third Wave Coffee",
+        "Third Wave",
+        "Third Wave Coffee Roasters",
+        "ThirdWave Coffee"
+      ],
+      "websiteSelected": "https://www.thirdwavecoffeeroasters.com",
+      "websiteReason": "official_search",
+      "candidateDomains": [
+        "https://www.thirdwavecoffeeroasters.com"
+      ],
+      "domainsAttempted": 1,
+      "domainsResolved": [],
+      "evidenceRetrieved": 2,
+      "evidenceStored": 2,
+      "sampleUrls": [
+        "https://www.thirdwavecoffeeroasters.com/",
+        "https://en.wikipedia.org/wiki/Third_Wave_Coffee"
+      ],
+      "validation": "fail",
+      "validationReason": "CampaignBrief missing markets, competitors, and media plan — research pipeline did not produce usable intelligence.",
+      "populatedFields": 0,
+      "totalScoredFields": 14
+    },
+    {
+      "brand": "Britannia",
+      "aliases": [
+        "Britannia",
+        "Britannia Industries",
+        "Britannia Industries Limited"
+      ],
+      "websiteSelected": "https://www.britannia.co.in",
+      "websiteReason": "official_search",
+      "candidateDomains": [
+        "https://www.britannia.co.in"
+      ],
+      "domainsAttempted": 1,
+      "domainsResolved": [],
+      "evidenceRetrieved": 4,
+      "evidenceStored": 4,
+      "sampleUrls": [
+        "https://www.britannia.co.in/",
+        "https://www.britannia.co.in/about",
+        "https://www.britannia.co.in/about-us",
+        "https://en.wikipedia.org/wiki/Britannia_Industries"
+      ],
+      "validation": "pass",
+      "populatedFields": 6,
+      "totalScoredFields": 14
+    },
+    {
+      "brand": "Giva",
+      "aliases": [
+        "Giva",
+        "Giva Jewellery"
+      ],
+      "websiteSelected": "https://www.giva.co",
+      "websiteReason": "official_search",
+      "candidateDomains": [
+        "https://www.giva.co"
+      ],
+      "domainsAttempted": 1,
+      "domainsResolved": [],
+      "evidenceRetrieved": 2,
+      "evidenceStored": 2,
+      "sampleUrls": [
+        "https://www.giva.co/",
+        "https://en.wikipedia.org/wiki/Giva"
+      ],
+      "validation": "fail",
+      "validationReason": "CampaignBrief missing markets, competitors, and media plan — research pipeline did not produce usable intelligence.",
+      "populatedFields": 0,
+      "totalScoredFields": 14
+    },
+    {
+      "brand": "Portronics",
+      "aliases": [
+        "Portronics"
+      ],
+      "websiteSelected": "https://www.portronics.com",
+      "websiteReason": "official_search",
+      "candidateDomains": [
+        "https://www.portronics.com"
+      ],
+      "domainsAttempted": 1,
+      "domainsResolved": [],
+      "evidenceRetrieved": 1,
+      "evidenceStored": 1,
+      "sampleUrls": [
+        "https://www.portronics.com/"
+      ],
+      "validation": "fail",
+      "validationReason": "CampaignBrief missing markets, competitors, and media plan — research pipeline did not produce usable intelligence.",
+      "populatedFields": 0,
+      "totalScoredFields": 14
+    },
+    {
+      "brand": "Apple India",
+      "aliases": [
+        "Apple India",
+        "Apple",
+        "Apple Inc"
+      ],
+      "websiteSelected": "https://www.apple.com/in/",
+      "websiteReason": "official_search",
+      "candidateDomains": [
+        "https://www.apple.com/in/"
+      ],
+      "domainsAttempted": 1,
+      "domainsResolved": [],
+      "evidenceRetrieved": 4,
+      "evidenceStored": 4,
+      "sampleUrls": [
+        "https://www.apple.com/",
+        "https://www.apple.com/sitemap",
+        "https://www.apple.com/apple-news",
+        "https://en.wikipedia.org/wiki/Apple_Inc."
+      ],
+      "validation": "fail",
+      "validationReason": "CampaignBrief missing markets, competitors, and media plan — research pipeline did not produce usable intelligence.",
+      "populatedFields": 0,
+      "totalScoredFields": 14
+    },
+    {
+      "brand": "Decathlon India",
+      "aliases": [
+        "Decathlon India",
+        "Decathlon",
+        "Decathlon Sports"
+      ],
+      "websiteSelected": "https://www.decathlon.in",
+      "websiteReason": "official_search",
+      "candidateDomains": [
+        "https://www.decathlon.in"
+      ],
+      "domainsAttempted": 1,
+      "domainsResolved": [],
+      "evidenceRetrieved": 2,
+      "evidenceStored": 2,
+      "sampleUrls": [
+        "https://www.decathlon.in/",
+        "https://en.wikipedia.org/wiki/Decathlon_(retailer)"
+      ],
+      "validation": "pass",
+      "populatedFields": 3,
+      "totalScoredFields": 14
+    },
+    {
+      "brand": "Blue Tokai",
+      "aliases": [
+        "Blue Tokai",
+        "Blue Tokai Coffee",
+        "Blue Tokai Coffee Roasters"
+      ],
+      "websiteSelected": "https://bluetokaicoffee.com",
+      "websiteReason": "official_search",
+      "candidateDomains": [
+        "https://bluetokaicoffee.com"
+      ],
+      "domainsAttempted": 1,
+      "domainsResolved": [],
+      "evidenceRetrieved": 2,
+      "evidenceStored": 2,
+      "sampleUrls": [
+        "https://bluetokaicoffee.com/",
+        "https://bluetokaicoffee.com/pages/whats-new"
+      ],
+      "validation": "fail",
+      "validationReason": "CampaignBrief is nearly empty (only brand name). LLM providers failed to extract research data — check OPENROUTER_API_KEY / Gemini quota.",
+      "populatedFields": 0,
+      "totalScoredFields": 14
+    }
+  ]
+}

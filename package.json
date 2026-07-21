@@ -1,0 +1,25 @@
+{
+  "name": "atlas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Atlas — AI-powered market intelligence platform for Bizex4U",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "dev:frontend": "npm run dev -w frontend",
+    "dev:backend": "npm run dev -w backend",
+    "build": "npm run build -w shared && npm run build -w backend && npm run build -w frontend",
+    "build:shared": "npm run build -w shared",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test -w shared && npm run test -w backend",
+    "test:retrieval": "npm run test:retrieval -w backend",
+    "test:shared": "npm run test -w shared"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

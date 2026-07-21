@@ -1,0 +1,79 @@
+{
+  "brand": {
+    "name": {
+      "value": "bata india",
+      "confidence": "estimated"
+    },
+    "category": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "hq": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "revenue": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "cagr": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "totalStores": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "pricePoint": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "ambassador": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "activeCampaign": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "pillars": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    }
+  },
+  "markets": [],
+  "competitors": {
+    "value": null,
+    "confidence": "needs_input"
+  },
+  "mediaPlan": {
+    "sequencing": [],
+    "seasonalPhases": []
+  },
+  "budget": {
+    "total": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "barterSavings": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "lineItems": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    }
+  }
+}

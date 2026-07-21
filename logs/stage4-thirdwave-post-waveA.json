@@ -1,0 +1,173 @@
+{
+  "campaignBrief": {
+    "meta": null,
+    "brand": {
+      "name": {
+        "value": "Third Wave Coffee",
+        "confidence": "estimated"
+      },
+      "category": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "insufficient_sources"
+      },
+      "hq": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "insufficient_sources"
+      },
+      "revenue": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "insufficient_sources"
+      },
+      "cagr": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "insufficient_sources"
+      },
+      "totalStores": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "insufficient_sources"
+      },
+      "pricePoint": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "insufficient_sources"
+      },
+      "ambassador": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "insufficient_sources"
+      },
+      "activeCampaign": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "insufficient_sources"
+      },
+      "pillars": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "insufficient_sources"
+      }
+    },
+    "markets": [],
+    "competitors": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "mediaPlan": {
+      "sequencing": [
+        {
+          "weeks": "1-4",
+          "channel": "OOH",
+          "budgetShare": "estimate: TBD",
+          "goal": "brand_awareness"
+        },
+        {
+          "weeks": "5-8",
+          "channel": "FM/Digital",
+          "budgetShare": "estimate: TBD",
+          "goal": "engagement"
+        },
+        {
+          "weeks": "9-12",
+          "channel": "Cinema",
+          "budgetShare": "estimate: TBD",
+          "goal": "consideration"
+        }
+      ],
+      "seasonalPhases": []
+    },
+    "budget": {
+      "total": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "insufficient_sources"
+      },
+      "barterSavings": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "insufficient_sources"
+      },
+      "lineItems": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "insufficient_sources"
+      }
+    }
+  },
+  "verification": {
+    "sseOutcome": "error (validation rejected)",
+    "validationError": "CampaignBrief failed validation: 93% of fields are needs_input (1/14 filled).",
+    "wallClockSeconds": 56,
+    "evidence": {
+      "retrieved": 0,
+      "storedInEvidenceStore": 0,
+      "passedToAgents": {
+        "Discovery": 0,
+        "Financials": 0,
+        "Footprint": 0,
+        "Campaign": 0,
+        "Competitor": 0,
+        "Geo": 0,
+        "Strategy": 0
+      },
+      "referencedInCampaignBrief": 0,
+      "wiringNote": "Retrieval Layer + Evidence Store exist but are NOT called from orchestrator/agents yet (Wave A Tasks 1\u20134 infrastructure only)."
+    },
+    "briefMeta": null,
+    "fieldsWithEvidenceReferences": [],
+    "populatedFieldsWithoutEvidence": [
+      "brand.name (value=\"Third Wave Coffee\", confidence=estimated) \u2014 assembler fallback from input brand; Discovery returned all nulls",
+      "mediaPlan.sequencing[0..2] \u2014 Strategy template rows (not Field<T>; no evidence/reasoningNotes)"
+    ],
+    "llm": {
+      "provider": "openrouter",
+      "model": "openrouter/free",
+      "latencyWallClockMs": 56000,
+      "tokenUsage": null,
+      "estimatedCost": null,
+      "evidenceCountInjectedIntoPrompts": 0,
+      "note": "callLLM supports usage logging, but agent log payloads for this run only record provider/model; tokenUsage not persisted to agent JSON logs. Evidence count is 0 because agents do not pass evidence[] yet.",
+      "perAgent": [
+        {
+          "agent": "Discovery",
+          "provider": "openrouter",
+          "model": "openrouter/free",
+          "sources": []
+        },
+        {
+          "agent": "Competitor",
+          "provider": "openrouter",
+          "model": "openrouter/free",
+          "sources": []
+        },
+        {
+          "agent": "Financials",
+          "provider": null,
+          "model": null,
+          "note": "no provider logged on this agent payload"
+        },
+        {
+          "agent": "Campaign",
+          "provider": "openrouter",
+          "model": "openrouter/free",
+          "sources": []
+        },
+        {
+          "agent": "Strategy",
+          "provider": "openrouter",
+          "model": "openrouter/free",
+          "sources": []
+        }
+      ]
+    },
+    "discoveryRaw": {
+      "thisRun": "all nulls (model returned null without evidence)",
+      "earlierRunSameBrand_17_50": "had officialName/website/category/hq \u2014 parametric LLM memory, sources=[]"
+    }
+  }
+}

@@ -1,0 +1,1170 @@
+npm warn Unknown env config "devdir". This will stop working in the next major version of npm.
+
+> @atlas/backend@0.1.0 test:retrieval:regression
+> tsx src/retrieval/__tests__/regression.brands.ts
+
+Retrieval regression (8 brands) + full research
+
+→ Bata India
+[atlas] fetchHtml failed {
+  url: 'https://www.bata.com/in/',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] known official domain probe failed — using anyway {
+  brand: 'Bata India',
+  known: 'https://www.bata.com/in/',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] website resolve {
+  brand: 'Bata India',
+  selected: 'https://www.bata.com/in/',
+  reason: 'official_search',
+  candidateDomains: [ 'https://www.bata.com/in/' ],
+  domainsAttempted: 1,
+  domainsResolved: []
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Bata%20India%20company'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] fetchHtml failed {
+  url: 'https://www.bata.com/in/',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] fetchHtml failed {
+  url: 'https://www.bata.com/in/',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] fetchHtml failed {
+  url: 'https://www.bata.com/in/',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] known official domain probe failed — using anyway {
+  brand: 'Bata India',
+  known: 'https://www.bata.com/in/',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] website resolve {
+  brand: 'Bata India',
+  selected: 'https://www.bata.com/in/',
+  reason: 'official_search',
+  candidateDomains: [ 'https://www.bata.com/in/' ],
+  domainsAttempted: 3,
+  domainsResolved: []
+}
+[atlas] fetchHtml failed {
+  url: 'https://www.bata.com/in/',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] candidates discovered {
+  brand: 'Bata India',
+  aliases: [
+    'Bata India',
+    'Bata',
+    'Bata Limited',
+    'Bata India Ltd',
+    'Bata Shoes',
+    'Bata India Limited'
+  ],
+  publisher: 40,
+  brandSite: 0,
+  websiteSelected: 'https://www.bata.com/in/',
+  websiteReason: 'official_search',
+  candidateDomains: [ 'https://www.bata.com/in/' ],
+  domainsAttempted: 3,
+  domainsResolved: []
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.exchange4media.com/media-others-news/waves-2027-mib-briefs-maharashtra-cm-on-plans-for-next-global-media-summit-156494.html',
+  reason: 'HTTP 403'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.exchange4media.com/articles/2026-07-20.html',
+  reason: 'HTTP 403'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.exchange4media.com/marketing-news/encompass-onboards-karan-johar-as-brand-ambassador-for-stoa-paris-156492.html',
+  reason: 'HTTP 403'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.exchange4media.com/marketing-news/raymond-lifestyle-puts-over-rs300-crore-integrated-creative-media-mandate-under-review-156463.html',
+  reason: 'HTTP 403'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.exchange4media.com/media-tv-news/barc-suspension-tv-ratings-policy-under-parliamentary-lens-156462.html',
+  reason: 'HTTP 403'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.exchange4media.com/media-others-news/punit-goenka-hails-fifa-partnership-as-milestone-for-footballs-growth-in-india-156457.html',
+  reason: 'HTTP 403'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.exchange4media.com/articles/2026-07-19.html',
+  reason: 'HTTP 403'
+}
+[atlas] [retrieval] complete {
+  brand: 'Bata India',
+  fetched: 9,
+  relevant: 1,
+  documents: 1,
+  latencyMs: 110380,
+  websiteSelected: 'https://www.bata.com/in/',
+  websiteReason: 'official_search',
+  publisherRejected: 8,
+  rejectionReasons: { rejected_ambiguous_geo_only: 8 }
+}
+[atlas] [retrieval] publisher rejections {
+  brand: 'Bata India',
+  sample: [
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/id-fresh-food-elevates-india-ceo-rajat-diwakar-to-its-board-156493.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/charlette-machado-elevated-at-avanse-financial-services-156491.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/sakshi-tv-elevates-faisal-siddiqui-as-chief-general-manager-revenue-156488.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/ultratech-cement-reappoints-vivek-agrawal-as-cmo-for-two-years-156489.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/saurabh-jhawar-joins-pernod-ricard-india-as-senior-vp-integrated-ops-156487.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/sachin-chhabra-has-joined-cfa-institute-as-senior-director-marketing-india-156486.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/binayak-bhattacharjee-appointed-president-marketing-at-origen-realty-156485.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/meenakshi-samantaray-elevated-as-vp-sports-marketing-at-metro-brands-156484.html',
+      reason: 'rejected_ambiguous_geo_only'
+    }
+  ]
+}
+  website=https://www.bata.com/in/ (official_search) | evidence=1 stored=1 | validation=fail — CampaignBrief missing markets, competitors, and media plan — research pipeline d
+→ Third Wave Coffee
+[atlas] [retrieval] website resolve {
+  brand: 'Third Wave Coffee',
+  selected: 'https://www.thirdwavecoffeeroasters.com/',
+  reason: 'official_search',
+  candidateDomains: [ 'https://www.thirdwavecoffeeroasters.com' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.thirdwavecoffeeroasters.com/' ]
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Third%20Wave%20Coffee%20company'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] website resolve {
+  brand: 'Third Wave Coffee',
+  selected: 'https://www.thirdwavecoffeeroasters.com/',
+  reason: 'discovery',
+  candidateDomains: [ 'https://www.thirdwavecoffeeroasters.com/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.thirdwavecoffeeroasters.com/' ]
+}
+[atlas] [retrieval] candidates discovered {
+  brand: 'Third Wave Coffee',
+  aliases: [
+    'Third Wave Coffee',
+    'Third Wave',
+    'Third Wave Coffee Roasters',
+    'ThirdWave Coffee'
+  ],
+  publisher: 40,
+  brandSite: 7,
+  websiteSelected: 'https://www.thirdwavecoffeeroasters.com/',
+  websiteReason: 'discovery',
+  candidateDomains: [ 'https://www.thirdwavecoffeeroasters.com/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.thirdwavecoffeeroasters.com/' ]
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.thirdwavecoffeeroasters.com/about',
+  reason: 'HTTP 404'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.thirdwavecoffeeroasters.com/about-us',
+  reason: 'HTTP 404'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.thirdwavecoffeeroasters.com/store-locator',
+  reason: 'HTTP 404'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.thirdwavecoffeeroasters.com/stores',
+  reason: 'HTTP 404'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.thirdwavecoffeeroasters.com/news',
+  reason: 'HTTP 404'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.thirdwavecoffeeroasters.com/campaigns',
+  reason: 'HTTP 404'
+}
+[atlas] [retrieval] complete {
+  brand: 'Third Wave Coffee',
+  fetched: 20,
+  relevant: 19,
+  documents: 10,
+  latencyMs: 34635,
+  websiteSelected: 'https://www.thirdwavecoffeeroasters.com/',
+  websiteReason: 'discovery',
+  publisherRejected: 1,
+  rejectionReasons: { rejected_no_brand_signal: 1 }
+}
+[atlas] [retrieval] publisher rejections {
+  brand: 'Third Wave Coffee',
+  sample: [
+    {
+      url: 'https://www.exchange4media.com/influence-zone-news/how-regional-creators-are-reshaping-indias-influencer-economy-156428.html',
+      reason: 'rejected_no_brand_signal'
+    }
+  ]
+}
+  website=https://www.thirdwavecoffeeroasters.com/ (official_search) | evidence=10 stored=10 | validation=pass
+→ Britannia
+[atlas] [retrieval] website resolve {
+  brand: 'Britannia',
+  selected: 'https://www.britannia.co.in/',
+  reason: 'official_search',
+  candidateDomains: [ 'https://www.britannia.co.in' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.britannia.co.in/' ]
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Britannia%20company'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] website resolve {
+  brand: 'Britannia',
+  selected: 'https://www.britannia.co.in/',
+  reason: 'discovery',
+  candidateDomains: [ 'https://www.britannia.co.in/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.britannia.co.in/' ]
+}
+[atlas] [retrieval] candidates discovered {
+  brand: 'Britannia',
+  aliases: [
+    'Britannia',
+    'Britannia Industries',
+    'Britannia Industries Limited'
+  ],
+  publisher: 40,
+  brandSite: 7,
+  websiteSelected: 'https://www.britannia.co.in/',
+  websiteReason: 'discovery',
+  candidateDomains: [ 'https://www.britannia.co.in/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.britannia.co.in/' ]
+}
+[atlas] [retrieval] complete {
+  brand: 'Britannia',
+  fetched: 20,
+  relevant: 8,
+  documents: 4,
+  latencyMs: 26222,
+  websiteSelected: 'https://www.britannia.co.in/',
+  websiteReason: 'discovery',
+  publisherRejected: 12,
+  rejectionReasons: { rejected_no_brand_signal: 12 }
+}
+[atlas] [retrieval] publisher rejections {
+  brand: 'Britannia',
+  sample: [
+    {
+      url: 'https://www.exchange4media.com/media-others-news/waves-2027-mib-briefs-maharashtra-cm-on-plans-for-next-global-media-summit-156494.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/articles/2026-07-20.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/marketing-news/encompass-onboards-karan-johar-as-brand-ambassador-for-stoa-paris-156492.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/id-fresh-food-elevates-india-ceo-rajat-diwakar-to-its-board-156493.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/charlette-machado-elevated-at-avanse-financial-services-156491.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/sakshi-tv-elevates-faisal-siddiqui-as-chief-general-manager-revenue-156488.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/ultratech-cement-reappoints-vivek-agrawal-as-cmo-for-two-years-156489.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/saurabh-jhawar-joins-pernod-ricard-india-as-senior-vp-integrated-ops-156487.html',
+      reason: 'rejected_no_brand_signal'
+    }
+  ]
+}
+  website=(none) (none) | evidence=0 stored=0 | validation=error
+→ Giva
+[atlas] [retrieval] website resolve {
+  brand: 'Giva',
+  selected: 'https://www.giva.co/',
+  reason: 'official_search',
+  candidateDomains: [ 'https://www.giva.co' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.giva.co/' ]
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Giva%20company'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] website resolve {
+  brand: 'Giva',
+  selected: 'https://www.giva.co/',
+  reason: 'discovery',
+  candidateDomains: [ 'https://www.giva.co/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.giva.co/' ]
+}
+[atlas] [retrieval] candidates discovered {
+  brand: 'Giva',
+  aliases: [ 'Giva', 'Giva Jewellery' ],
+  publisher: 40,
+  brandSite: 7,
+  websiteSelected: 'https://www.giva.co/',
+  websiteReason: 'discovery',
+  candidateDomains: [ 'https://www.giva.co/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.giva.co/' ]
+}
+[atlas] [retrieval] article fetch failed { url: 'https://www.giva.co/about', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://www.giva.co/about-us', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://www.giva.co/store-locator', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://www.giva.co/stores', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://www.giva.co/news', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://www.giva.co/campaigns', reason: 'HTTP 404' }
+[atlas] [retrieval] complete {
+  brand: 'Giva',
+  fetched: 20,
+  relevant: 2,
+  documents: 2,
+  latencyMs: 33994,
+  websiteSelected: 'https://www.giva.co/',
+  websiteReason: 'discovery',
+  publisherRejected: 18,
+  rejectionReasons: { rejected_no_brand_signal: 18 }
+}
+[atlas] [retrieval] publisher rejections {
+  brand: 'Giva',
+  sample: [
+    {
+      url: 'https://www.exchange4media.com/media-others-news/waves-2027-mib-briefs-maharashtra-cm-on-plans-for-next-global-media-summit-156494.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/articles/2026-07-20.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/marketing-news/encompass-onboards-karan-johar-as-brand-ambassador-for-stoa-paris-156492.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/id-fresh-food-elevates-india-ceo-rajat-diwakar-to-its-board-156493.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/charlette-machado-elevated-at-avanse-financial-services-156491.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/sakshi-tv-elevates-faisal-siddiqui-as-chief-general-manager-revenue-156488.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/ultratech-cement-reappoints-vivek-agrawal-as-cmo-for-two-years-156489.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/saurabh-jhawar-joins-pernod-ricard-india-as-senior-vp-integrated-ops-156487.html',
+      reason: 'rejected_no_brand_signal'
+    }
+  ]
+}
+  website=https://www.giva.co/ (official_search) | evidence=2 stored=2 | validation=pass
+→ Portronics
+[atlas] [retrieval] website resolve {
+  brand: 'Portronics',
+  selected: 'https://www.portronics.com/',
+  reason: 'official_search',
+  candidateDomains: [ 'https://www.portronics.com' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.portronics.com/' ]
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Portronics%20company'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] website resolve {
+  brand: 'Portronics',
+  selected: 'https://www.portronics.com/',
+  reason: 'discovery',
+  candidateDomains: [ 'https://www.portronics.com/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.portronics.com/' ]
+}
+[atlas] [retrieval] candidates discovered {
+  brand: 'Portronics',
+  aliases: [ 'Portronics' ],
+  publisher: 40,
+  brandSite: 7,
+  websiteSelected: 'https://www.portronics.com/',
+  websiteReason: 'discovery',
+  candidateDomains: [ 'https://www.portronics.com/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.portronics.com/' ]
+}
+[atlas] [retrieval] article fetch failed { url: 'https://www.portronics.com/about', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://www.portronics.com/about-us', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://www.portronics.com/store-locator', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://www.portronics.com/stores', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://www.portronics.com/news', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://www.portronics.com/campaigns', reason: 'HTTP 404' }
+[atlas] [retrieval] complete {
+  brand: 'Portronics',
+  fetched: 20,
+  relevant: 1,
+  documents: 1,
+  latencyMs: 33010,
+  websiteSelected: 'https://www.portronics.com/',
+  websiteReason: 'discovery',
+  publisherRejected: 19,
+  rejectionReasons: { rejected_no_brand_signal: 19 }
+}
+[atlas] [retrieval] publisher rejections {
+  brand: 'Portronics',
+  sample: [
+    {
+      url: 'https://www.exchange4media.com/media-others-news/waves-2027-mib-briefs-maharashtra-cm-on-plans-for-next-global-media-summit-156494.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/articles/2026-07-20.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/marketing-news/encompass-onboards-karan-johar-as-brand-ambassador-for-stoa-paris-156492.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/id-fresh-food-elevates-india-ceo-rajat-diwakar-to-its-board-156493.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/charlette-machado-elevated-at-avanse-financial-services-156491.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/sakshi-tv-elevates-faisal-siddiqui-as-chief-general-manager-revenue-156488.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/ultratech-cement-reappoints-vivek-agrawal-as-cmo-for-two-years-156489.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/saurabh-jhawar-joins-pernod-ricard-india-as-senior-vp-integrated-ops-156487.html',
+      reason: 'rejected_no_brand_signal'
+    }
+  ]
+}
+  website=(none) (none) | evidence=0 stored=0 | validation=error
+→ Apple India
+[atlas] fetchHtml failed {
+  url: 'https://html.duckduckgo.com/html/?q=Apple%20India%20official%20website',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] official domain search failed {
+  query: 'Apple India official website',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] fetchHtml failed {
+  url: 'https://html.duckduckgo.com/html/?q=Apple%20India%20official%20site%20India',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] official domain search failed {
+  query: 'Apple India official site India',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] fetchHtml failed {
+  url: 'https://www.apple.com/in/',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] known official domain probe failed — using anyway {
+  brand: 'Apple India',
+  known: 'https://www.apple.com/in/',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] website resolve {
+  brand: 'Apple India',
+  selected: 'https://www.apple.com/in/',
+  reason: 'official_search',
+  candidateDomains: [ 'https://www.apple.com/in/' ],
+  domainsAttempted: 1,
+  domainsResolved: []
+}
+[atlas] fetchHtml failed {
+  url: 'https://economictimes.indiatimes.com/topic/Apple%20India%20company',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] fetchHtml failed {
+  url: 'https://www.moneycontrol.com/news/tags/apple-india-company.html',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'fetch failed' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Apple%20India%20company'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Apple%20India%20about'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] fetchHtml failed {
+  url: 'https://www.afaqs.com/search?q=Apple%20India%20about',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'The operation was aborted due to timeout' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Apple%20India%20about'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Apple%20India%20revenue'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Apple%20India%20revenue'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Apple%20India%20annual%20report'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Apple%20India%20annual%20report'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Apple%20India%20campaign'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Apple%20India%20campaign'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Apple%20India%20brand%20ambassador'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Apple%20India%20brand%20ambassador'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Apple%20India%20competitors'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Apple%20India%20competitors'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Apple%20India%20vs'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Apple%20India%20vs'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Apple%20India%20store%20count'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] fetchHtml failed {
+  url: 'https://www.afaqs.com/search?q=Apple%20India%20store%20count',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'The operation was aborted due to timeout' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Apple%20India%20store%20count'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Apple%20India%20retail%20stores'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Apple%20India%20retail%20stores'
+}
+[atlas] [retrieval] website resolve {
+  brand: 'Apple India',
+  selected: 'https://www.apple.com/in/',
+  reason: 'discovery',
+  candidateDomains: [ 'https://www.apple.com/in/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.apple.com/in/' ]
+}
+[atlas] [retrieval] candidates discovered {
+  brand: 'Apple India',
+  aliases: [ 'Apple India', 'Apple', 'Apple Inc' ],
+  publisher: 0,
+  brandSite: 7,
+  websiteSelected: 'https://www.apple.com/in/',
+  websiteReason: 'discovery',
+  candidateDomains: [ 'https://www.apple.com/in/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.apple.com/in/' ]
+}
+[atlas] [retrieval] article fetch failed { url: 'https://www.apple.com/about-us', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://www.apple.com/store-locator', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://www.apple.com/stores', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://www.apple.com/campaigns', reason: 'HTTP 404' }
+[atlas] fetchHtml failed {
+  url: 'https://en.wikipedia.org/wiki/Apple_Inc.',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://en.wikipedia.org/wiki/Apple_Inc.',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] complete {
+  brand: 'Apple India',
+  fetched: 3,
+  relevant: 3,
+  documents: 3,
+  latencyMs: 4051853,
+  websiteSelected: 'https://www.apple.com/in/',
+  websiteReason: 'discovery',
+  publisherRejected: 0,
+  rejectionReasons: {}
+}
+  website=(none) (none) | evidence=0 stored=0 | validation=error
+→ Decathlon India
+[atlas] [retrieval] website resolve {
+  brand: 'Decathlon India',
+  selected: 'https://www.decathlon.in/',
+  reason: 'official_search',
+  candidateDomains: [ 'https://www.decathlon.in' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.decathlon.in/' ]
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Decathlon%20India%20company'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Decathlon%20India%20company'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Decathlon%20India%20about'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Decathlon%20India%20about'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Decathlon%20India%20revenue'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Decathlon%20India%20revenue'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Decathlon%20India%20annual%20report'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'HTTP 403' }
+[atlas] fetchHtml failed {
+  url: 'https://mediabrief.com/?s=Decathlon%20India%20annual%20report',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] fetchHtml failed {
+  url: 'https://economictimes.indiatimes.com/topic/Decathlon%20India%20campaign',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] fetchHtml failed {
+  url: 'https://www.moneycontrol.com/news/tags/decathlon-india-campaign.html',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.business-standard.com/search?q=Decathlon%20India%20campaign',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.afaqs.com/search?q=Decathlon%20India%20campaign',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.exchange4media.com/?s=Decathlon%20India%20campaign',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://mediabrief.com/?s=Decathlon%20India%20campaign',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'MediaBrief', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://economictimes.indiatimes.com/topic/Decathlon%20India%20brand%20ambassador',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Economic Times', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.moneycontrol.com/news/tags/decathlon-india-brand-ambassador.html',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.business-standard.com/search?q=Decathlon%20India%20brand%20ambassador',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.afaqs.com/search?q=Decathlon%20India%20brand%20ambassador',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.exchange4media.com/?s=Decathlon%20India%20brand%20ambassador',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://mediabrief.com/?s=Decathlon%20India%20brand%20ambassador',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'MediaBrief', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://economictimes.indiatimes.com/topic/Decathlon%20India%20competitors',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Economic Times', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.moneycontrol.com/news/tags/decathlon-india-competitors.html',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.business-standard.com/search?q=Decathlon%20India%20competitors',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.afaqs.com/search?q=Decathlon%20India%20competitors',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.exchange4media.com/?s=Decathlon%20India%20competitors',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Exchange4media', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://mediabrief.com/?s=Decathlon%20India%20competitors',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'MediaBrief', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://economictimes.indiatimes.com/topic/Decathlon%20India%20vs',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Economic Times', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.moneycontrol.com/news/tags/decathlon-india-vs.html',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.business-standard.com/search?q=Decathlon%20India%20vs',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'fetch failed' }
+[atlas] fetchHtml failed {
+  url: 'https://www.afaqs.com/search?q=Decathlon%20India%20vs',
+  reason: 'fetch failed'
+}
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'fetch failed' }
+[atlas] [retrieval] website resolve {
+  brand: 'Decathlon India',
+  selected: 'https://www.decathlon.in/',
+  reason: 'discovery',
+  candidateDomains: [ 'https://www.decathlon.in/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.decathlon.in/' ]
+}
+[atlas] [retrieval] candidates discovered {
+  brand: 'Decathlon India',
+  aliases: [ 'Decathlon India', 'Decathlon', 'Decathlon Sports' ],
+  publisher: 40,
+  brandSite: 7,
+  websiteSelected: 'https://www.decathlon.in/',
+  websiteReason: 'discovery',
+  candidateDomains: [ 'https://www.decathlon.in/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://www.decathlon.in/' ]
+}
+[atlas] [retrieval] article text too short — skipped {
+  url: 'https://www.decathlon.in/about',
+  minChars: 120,
+  method: 'brand_site'
+}
+[atlas] [retrieval] article text too short — skipped {
+  url: 'https://www.decathlon.in/about-us',
+  minChars: 120,
+  method: 'brand_site'
+}
+[atlas] [retrieval] article text too short — skipped {
+  url: 'https://www.decathlon.in/store-locator',
+  minChars: 120,
+  method: 'brand_site'
+}
+[atlas] [retrieval] article text too short — skipped {
+  url: 'https://www.decathlon.in/stores',
+  minChars: 120,
+  method: 'brand_site'
+}
+[atlas] [retrieval] article text too short — skipped {
+  url: 'https://www.decathlon.in/news',
+  minChars: 120,
+  method: 'brand_site'
+}
+[atlas] [retrieval] article text too short — skipped {
+  url: 'https://www.decathlon.in/campaigns',
+  minChars: 120,
+  method: 'brand_site'
+}
+[atlas] fetchHtml failed {
+  url: 'https://www.exchange4media.com/marketing-news/encompass-onboards-karan-johar-as-brand-ambassador-for-stoa-paris-156492.html',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.exchange4media.com/marketing-news/encompass-onboards-karan-johar-as-brand-ambassador-for-stoa-paris-156492.html',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] fetchHtml failed {
+  url: 'https://www.exchange4media.com/people-movement-news/saurabh-jhawar-joins-pernod-ricard-india-as-senior-vp-integrated-ops-156487.html',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.exchange4media.com/people-movement-news/saurabh-jhawar-joins-pernod-ricard-india-as-senior-vp-integrated-ops-156487.html',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] fetchHtml failed {
+  url: 'https://www.exchange4media.com/marketing-news/raymond-lifestyle-puts-over-rs300-crore-integrated-creative-media-mandate-under-review-156463.html',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.exchange4media.com/marketing-news/raymond-lifestyle-puts-over-rs300-crore-integrated-creative-media-mandate-under-review-156463.html',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] complete {
+  brand: 'Decathlon India',
+  fetched: 20,
+  relevant: 2,
+  documents: 2,
+  latencyMs: 7101569,
+  websiteSelected: 'https://www.decathlon.in/',
+  websiteReason: 'discovery',
+  publisherRejected: 18,
+  rejectionReasons: { rejected_ambiguous_geo_only: 18 }
+}
+[atlas] [retrieval] publisher rejections {
+  brand: 'Decathlon India',
+  sample: [
+    {
+      url: 'https://www.exchange4media.com/media-others-news/waves-2027-mib-briefs-maharashtra-cm-on-plans-for-next-global-media-summit-156494.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/articles/2026-07-20.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/id-fresh-food-elevates-india-ceo-rajat-diwakar-to-its-board-156493.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/charlette-machado-elevated-at-avanse-financial-services-156491.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/sakshi-tv-elevates-faisal-siddiqui-as-chief-general-manager-revenue-156488.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/ultratech-cement-reappoints-vivek-agrawal-as-cmo-for-two-years-156489.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/sachin-chhabra-has-joined-cfa-institute-as-senior-director-marketing-india-156486.html',
+      reason: 'rejected_ambiguous_geo_only'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/binayak-bhattacharjee-appointed-president-marketing-at-origen-realty-156485.html',
+      reason: 'rejected_ambiguous_geo_only'
+    }
+  ]
+}
+  website=(none) (none) | evidence=0 stored=0 | validation=error
+→ Blue Tokai
+[atlas] [retrieval] website resolve {
+  brand: 'Blue Tokai',
+  selected: 'https://bluetokaicoffee.com/',
+  reason: 'official_search',
+  candidateDomains: [ 'https://bluetokaicoffee.com' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://bluetokaicoffee.com/' ]
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Blue%20Tokai%20company'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] fetchHtml failed {
+  url: 'https://www.exchange4media.com/?s=Blue%20Tokai%20company',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Exchange4media',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'MediaBrief',
+  reason: 'robots.txt disallows https://mediabrief.com/?s=Blue%20Tokai%20company'
+}
+[atlas] [retrieval] search page fetch failed {
+  source: 'Economic Times',
+  reason: 'robots.txt disallows https://economictimes.indiatimes.com/topic/Blue%20Tokai%20about'
+}
+[atlas] [retrieval] search page fetch failed { source: 'Moneycontrol', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'Business Standard', reason: 'HTTP 403' }
+[atlas] [retrieval] search page fetch failed { source: 'afaqs', reason: 'HTTP 404' }
+[atlas] fetchHtml failed {
+  url: 'https://en.wikipedia.org/wiki/Blue_Tokai',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] website resolve {
+  brand: 'Blue Tokai',
+  selected: 'https://bluetokaicoffee.com/',
+  reason: 'discovery',
+  candidateDomains: [ 'https://bluetokaicoffee.com/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://bluetokaicoffee.com/' ]
+}
+[atlas] [retrieval] candidates discovered {
+  brand: 'Blue Tokai',
+  aliases: [ 'Blue Tokai', 'Blue Tokai Coffee', 'Blue Tokai Coffee Roasters' ],
+  publisher: 40,
+  brandSite: 7,
+  websiteSelected: 'https://bluetokaicoffee.com/',
+  websiteReason: 'discovery',
+  candidateDomains: [ 'https://bluetokaicoffee.com/' ],
+  domainsAttempted: 1,
+  domainsResolved: [ 'https://bluetokaicoffee.com/' ]
+}
+[atlas] [retrieval] article fetch failed { url: 'https://bluetokaicoffee.com/about', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://bluetokaicoffee.com/about-us', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed {
+  url: 'https://bluetokaicoffee.com/store-locator',
+  reason: 'HTTP 404'
+}
+[atlas] [retrieval] article fetch failed { url: 'https://bluetokaicoffee.com/stores', reason: 'HTTP 404' }
+[atlas] [retrieval] article fetch failed { url: 'https://bluetokaicoffee.com/news', reason: 'HTTP 503' }
+[atlas] [retrieval] article fetch failed { url: 'https://bluetokaicoffee.com/campaigns', reason: 'HTTP 503' }
+[atlas] fetchHtml failed {
+  url: 'https://www.exchange4media.com/articles/2026-07-19.html',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] article fetch failed {
+  url: 'https://www.exchange4media.com/articles/2026-07-19.html',
+  reason: 'The operation was aborted due to timeout'
+}
+[atlas] [retrieval] complete {
+  brand: 'Blue Tokai',
+  fetched: 20,
+  relevant: 1,
+  documents: 1,
+  latencyMs: 6284216,
+  websiteSelected: 'https://bluetokaicoffee.com/',
+  websiteReason: 'discovery',
+  publisherRejected: 19,
+  rejectionReasons: { rejected_no_brand_signal: 19 }
+}
+[atlas] [retrieval] publisher rejections {
+  brand: 'Blue Tokai',
+  sample: [
+    {
+      url: 'https://www.exchange4media.com/media-others-news/waves-2027-mib-briefs-maharashtra-cm-on-plans-for-next-global-media-summit-156494.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/articles/2026-07-20.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/marketing-news/encompass-onboards-karan-johar-as-brand-ambassador-for-stoa-paris-156492.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/id-fresh-food-elevates-india-ceo-rajat-diwakar-to-its-board-156493.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/charlette-machado-elevated-at-avanse-financial-services-156491.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/sakshi-tv-elevates-faisal-siddiqui-as-chief-general-manager-revenue-156488.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/ultratech-cement-reappoints-vivek-agrawal-as-cmo-for-two-years-156489.html',
+      reason: 'rejected_no_brand_signal'
+    },
+    {
+      url: 'https://www.exchange4media.com/people-movement-news/saurabh-jhawar-joins-pernod-ricard-india-as-senior-vp-integrated-ops-156487.html',
+      reason: 'rejected_no_brand_signal'
+    }
+  ]
+}
+  website=(none) (none) | evidence=0 stored=0 | validation=error
+
+=== Summary ===
+| Brand | Evidence retrieved | Stored | Website | Reason | Validation | Populated |
+|---|---:|---:|---|---|---|---|
+| Bata India | 1 | 1 | https://www.bata.com/in/ | official_search | fail | 0/14 |
+| Third Wave Coffee | 10 | 10 | https://www.thirdwavecoffeeroasters.com/ | official_search | pass | 2/14 |
+| Britannia | 0 | 0 | — | none | error | 0/14 |
+| Giva | 2 | 2 | https://www.giva.co/ | official_search | pass | 3/14 |
+| Portronics | 0 | 0 | — | none | error | 0/14 |
+| Apple India | 0 | 0 | — | none | error | 0/14 |
+| Decathlon India | 0 | 0 | — | none | error | 0/14 |
+| Blue Tokai | 0 | 0 | — | none | error | 0/14 |
+
+Wrote /Users/yashmehrotra/Desktop/atlas-v2/logs/retrieval-regression.json
+Failures (0 evidence or validation fail/error): 6/8
+  - Bata India: evidence=1 validation=fail CampaignBrief missing markets, competitors, and media plan — research pipeline did not produce usable intelligence.
+  - Britannia: evidence=0 validation=error The operation was aborted due to timeout
+  - Portronics: evidence=0 validation=error The operation was aborted due to timeout
+  - Apple India: evidence=0 validation=error The operation was aborted due to timeout
+  - Decathlon India: evidence=0 validation=error The operation was aborted due to timeout
+  - Blue Tokai: evidence=0 validation=error The operation was aborted due to timeout
+npm error Lifecycle script `test:retrieval:regression` failed with error:
+npm error code 1
+npm error path /Users/yashmehrotra/Desktop/atlas-v2/backend
+npm error workspace @atlas/backend@0.1.0
+npm error location /Users/yashmehrotra/Desktop/atlas-v2/backend
+npm error command failed
+npm error command sh -c tsx src/retrieval/__tests__/regression.brands.ts

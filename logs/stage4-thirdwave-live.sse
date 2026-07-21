@@ -1,0 +1,44 @@
+data: {"type":"agent","agent":"Discovery","status":"pending"}
+
+data: {"type":"agent","agent":"Financials","status":"pending"}
+
+data: {"type":"agent","agent":"Footprint","status":"pending"}
+
+data: {"type":"agent","agent":"Campaign","status":"pending"}
+
+data: {"type":"agent","agent":"Competitor","status":"pending"}
+
+data: {"type":"agent","agent":"Geo","status":"pending"}
+
+data: {"type":"agent","agent":"Strategy","status":"pending"}
+
+data: {"type":"agent","agent":"Discovery","status":"running","detail":"Discovering brand…"}
+
+data: {"type":"agent","agent":"Discovery","status":"done","detail":"Brand profile partially resolved","data":{"officialName":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"website":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"category":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"hq":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"aliases":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"}}}
+
+data: {"type":"agent","agent":"Financials","status":"running","detail":"Analyzing financials…"}
+
+data: {"type":"agent","agent":"Footprint","status":"running","detail":"Mapping stores…"}
+
+data: {"type":"agent","agent":"Campaign","status":"running","detail":"Scanning campaigns…"}
+
+data: {"type":"agent","agent":"Competitor","status":"running","detail":"Identifying competitors…"}
+
+data: {"type":"agent","agent":"Competitor","status":"done","detail":"Competitor set incomplete","data":{"competitors":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"partial":true,"error":"No verified competitors"}}
+
+data: {"type":"agent","agent":"Financials","status":"done","detail":"Financial signals reviewed","data":{"revenue":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"cagr":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"growthTarget":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"priceRange":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"partial":true}}
+
+data: {"type":"agent","agent":"Footprint","status":"done","detail":"Footprint partially mapped","data":{"totalStores":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"storesByCity":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"confidence":"needs_input","partial":true,"error":"No store footprint sources succeeded"}}
+
+data: {"type":"agent","agent":"Campaign","status":"done","detail":"Campaign context reviewed","data":{"activeCampaign":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"ambassador":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"tvcName":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"pillars":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"partial":true}}
+
+data: {"type":"agent","agent":"Geo","status":"running","detail":"Computing geo clusters…"}
+
+data: {"type":"agent","agent":"Geo","status":"done","detail":"0 market clusters computed","data":{"markets":[],"partial":true,"error":"No footprint cities to enrich"}}
+
+data: {"type":"agent","agent":"Strategy","status":"running","detail":"Synthesizing strategy…"}
+
+data: {"type":"agent","agent":"Strategy","status":"done","detail":"0 priority markets synthesized","data":{"priorityMarkets":[],"sequencing":[{"weeks":"1-4","channel":"OOH","budgetShare":"estimate: TBD","goal":"brand_awareness"},{"weeks":"5-8","channel":"FM/Digital","budgetShare":"estimate: TBD","goal":"engagement"},{"weeks":"9-12","channel":"Cinema","budgetShare":"estimate: TBD","goal":"consideration"}],"seasonalPhases":[],"budget":{"total":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"barterSavings":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"lineItems":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"}},"creativePillars":{"value":null,"confidence":"needs_input","reason":"insufficient_sources"},"partial":true}}
+
+data: {"type":"error","message":"CampaignBrief failed validation: 93% of fields are needs_input (1/14 filled)."}
+

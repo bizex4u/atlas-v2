@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-atlas-bg: #0a0b0f;
+  --color-atlas-surface: #12141a;
+  --color-atlas-elevated: #1a1d27;
+  --color-atlas-border: #2a2d3a;
+  --color-atlas-muted: #8b8fa3;
+  --color-atlas-text: #f4f4f7;
+  --color-atlas-accent: #7c3aed;
+  --color-atlas-accent-soft: #8b5cf6;
+  --color-atlas-success: #22c55e;
+  --color-atlas-warning: #eab308;
+  --color-atlas-danger: #ef4444;
+
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-atlas-bg);
+    color: var(--color-atlas-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-atlas-accent) 40%, transparent);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "requestId": "770a738a-4183-4602-8866-7882a89c8c07",
+    "executionId": "770a738a-4183-4602-8866-7882a89c8c07",
+    "generatedAt": "2026-07-20T18:17:17.504Z",
+    "provider": "openrouter",
+    "model": "openrouter/free",
+    "orchestratorVersion": "0.2.0-evidence-wired",
+    "promptVersion": "waveA-wiring",
+    "agentVersions": {
+      "Discovery": "2",
+      "Financials": "2",
+      "Footprint": "2",
+      "Campaign": "2",
+      "Competitor": "2",
+      "Geo": "1",
+      "Strategy": "2"
+    },
+    "latencyMs": 176119,
+    "tokenUsage": {
+      "prompt": 10099,
+      "completion": 5262,
+      "total": 15361
+    },
+    "estimatedCost": 0.00076805,
+    "cacheHits": 0
+  },
+  "brand": {
+    "name": {
+      "value": "Third Wave Coffee",
+      "confidence": "verified",
+      "evidence": [
+        {
+          "evidenceId": "8fa14f84afa3cbc12c7e0b0e"
+        }
+      ],
+      "sources": [
+        "https://www.thirdwavecoffeeroasters.com/"
+      ],
+      "extractionMethod": "llm_extract"
+    },
+    "category": {
+      "value": "Coffee retail",
+      "confidence": "verified",
+      "evidence": [
+        {
+          "evidenceId": "8fa14f84afa3cbc12c7e0b0e"
+        }
+      ],
+      "sources": [
+        "https://www.thirdwavecoffeeroasters.com/"
+      ],
+      "extractionMethod": "llm_extract"
+    },
+    "hq": {
+      "value": null,
+      "confidence": "needs_input",
+      "evidence": [],
+      "reason": "insufficient_sources"
+    },
+    "revenue": {
+      "value": null,
+      "confidence": "needs_input",
+      "evidence": [],
+      "reason": "insufficient_sources"
+    },
+    "cagr": {
+      "value": null,
+      "confidence": "needs_input",
+      "evidence": [],
+      "reason": "insufficient_sources"
+    },
+    "totalStores": {
+      "value": null,
+      "confidence": "needs_input",
+      "evidence": [],
+      "reason": "insufficient_sources"
+    },
+    "pricePoint": {
+      "value": "Rs. 650 - Rs. 700",
+      "confidence": "verified",
+      "evidence": [
+        {
+          "evidenceId": "618d56c1dcadc8d836a948a8"
+        },
+        {
+          "evidenceId": "8fa14f84afa3cbc12c7e0b0e"
+        }
+      ],
+      "sources": [
+        "https://www.exchange4media.com/articles/2026-07-10.html",
+        "https://www.thirdwavecoffeeroasters.com/"
+      ],
+      "extractionMethod": "llm_extract"
+    },
+    "ambassador": {
+      "value": null,
+      "confidence": "needs_input",
+      "evidence": [],
+      "reason": "insufficient_sources"
+    },
+    "activeCampaign": {
+      "value": null,
+      "confidence": "needs_input",
+      "evidence": [],
+      "reason": "insufficient_sources"
+    },
+    "pillars": {
+      "value": null,
+      "confidence": "needs_input",
+      "evidence": [],
+      "reason": "insufficient_sources"
+    }
+  },
+  "markets": [
+    {
+      "name": "Bengaluru",
+      "priority": "P1",
+      "storeCount": 0,
+      "clusters": [],
+      "highways": [],
+      "inventory": {
+        "value": null,
+        "confidence": "needs_input",
+        "evidence": [],
+        "reason": "vendor inventory not yet loaded"
+      },
+      "zeptoOverlap": 0,
+      "rationale": "Featured as Bengaluru\u2019s Favourite coffee in Third Wave\u2019s campaign, indicating strong local footprint and relevance for a targeted launch.",
+      "budgetAllocation": "estimated",
+      "geoMarketId": "Bengaluru",
+      "evidence": [
+        {
+          "evidenceId": "8fa14f84afa3cbc12c7e0b0e"
+        },
+        {
+          "evidenceId": "618d56c1dcadc8d836a948a8"
+        }
+      ]
+    }
+  ],
+  "competitors": {
+    "value": null,
+    "confidence": "needs_input",
+    "evidence": []
+  },
+  "mediaPlan": {
+    "sequencing": [
+      {
+        "weeks": "Weeks 1\u20114",
+        "channel": "OOH (Out\u2011of\u2011Home)",
+        "budgetShare": "estimated",
+        "goal": "Build awareness of Third Wave\u2019s three flagship roasts and drive trial via the \u2018BENGALURU\u2019S FAVOURITE\u2019 teaser.",
+        "evidence": [
+          {
+            "evidenceId": "8fa14f84afa3cbc12c7e0b0e"
+          },
+          {
+            "evidenceId": "618d56c1dcadc8d836a948a8"
+          }
+        ]
+      },
+      {
+        "weeks": "Weeks 5\u20118",
+        "channel": "FM/Digital (Streaming & Social)",
+        "budgetShare": "estimated",
+        "goal": "Engage coffee enthusiasts with interactive quiz and targeted digital offers to convert awareness into purchases.",
+        "evidence": [
+          {
+            "evidenceId": "8fa14f84afa3cbc12c7e0b0e"
+          },
+          {
+            "evidenceId": "618d56c1dcadc8d836a948a8"
+          }
+        ]
+      },
+      {
+        "weeks": "Weeks 9\u201112",
+        "channel": "Cinema",
+        "budgetShare": "estimated",
+        "goal": "Reinforce brand love and drive last\u2011minute seasonal purchases with high\u2011impact cinematic spots.",
+        "evidence": [
+          {
+            "evidenceId": "8fa14f84afa3cbc12c7e0b0e"
+          },
+          {
+            "evidenceId": "618d56c1dcadc8d836a948a8"
+          }
+        ]
+      }
+    ],
+    "seasonalPhases": []
+  },
+  "budget": {
+    "total": {
+      "value": null,
+      "confidence": "needs_input",
+      "evidence": [],
+      "reason": "insufficient_sources"
+    },
+    "barterSavings": {
+      "value": null,
+      "confidence": "needs_input",
+      "evidence": [],
+      "reason": "insufficient_sources"
+    },
+    "lineItems": {
+      "value": null,
+      "confidence": "needs_input",
+      "evidence": [],
+      "reason": "insufficient_sources"
+    }
+  }
+}

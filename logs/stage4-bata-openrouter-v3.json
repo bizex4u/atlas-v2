@@ -1,0 +1,191 @@
+{
+  "brand": {
+    "name": {
+      "value": "Bata India Limited",
+      "confidence": "estimated"
+    },
+    "category": {
+      "value": "Footwear retail",
+      "confidence": "estimated"
+    },
+    "hq": {
+      "value": "Gurugram, India",
+      "confidence": "estimated"
+    },
+    "revenue": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "cagr": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "totalStores": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "pricePoint": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "ambassador": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "activeCampaign": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "pillars": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    }
+  },
+  "markets": [
+    {
+      "name": "Gurugram",
+      "priority": "P1",
+      "storeCount": 0,
+      "clusters": [],
+      "highways": [],
+      "inventory": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "vendor inventory not yet loaded"
+      },
+      "zeptoOverlap": 0,
+      "rationale": "Headquarters location; high density of urban consumers and quick-commerce potential.",
+      "budgetAllocation": null
+    },
+    {
+      "name": "Delhi NCR",
+      "priority": "P2",
+      "storeCount": 0,
+      "clusters": [],
+      "highways": [],
+      "inventory": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "vendor inventory not yet loaded"
+      },
+      "zeptoOverlap": 0,
+      "rationale": "High retail density and significant overlap with quick-commerce delivery zones.",
+      "budgetAllocation": null
+    },
+    {
+      "name": "Mumbai",
+      "priority": "P3",
+      "storeCount": 0,
+      "clusters": [],
+      "highways": [],
+      "inventory": {
+        "value": null,
+        "confidence": "needs_input",
+        "reason": "vendor inventory not yet loaded"
+      },
+      "zeptoOverlap": 0,
+      "rationale": "Major metropolitan hub with high footwear consumption and quick-commerce adjacency.",
+      "budgetAllocation": null
+    }
+  ],
+  "competitors": {
+    "value": [
+      {
+        "name": "Relaxo Footwears Limited",
+        "presence": "Mass-market footwear leader offering affordable casual and sports shoes through extensive retail network."
+      },
+      {
+        "name": "Liberty Shoes Limited",
+        "presence": "Mid-segment footwear brand with strong presence in leather and non-leather categories across India."
+      },
+      {
+        "name": "Campus Activewear Limited",
+        "presence": "Fast-growing sports and athleisure footwear brand targeting youth with trendy designs."
+      },
+      {
+        "name": "Metro Brands Limited",
+        "presence": "Premium footwear retailer operating multi-brand stores and owned brands like Metro and Mochi."
+      },
+      {
+        "name": "Khadim India Limited",
+        "presence": "Regional powerhouse in Eastern India expanding nationally with value-for-money footwear."
+      }
+    ],
+    "confidence": "estimated"
+  },
+  "mediaPlan": {
+    "sequencing": [
+      {
+        "weeks": "Weeks 1-4",
+        "channel": "OOH",
+        "budgetShare": null,
+        "goal": "Brand visibility and awareness in high-traffic urban corridors."
+      },
+      {
+        "weeks": "Weeks 5-8",
+        "channel": "FM/Digital",
+        "budgetShare": null,
+        "goal": "Drive engagement and consideration through audio and social media targeting."
+      },
+      {
+        "weeks": "Weeks 9-12",
+        "channel": "Cinema",
+        "budgetShare": null,
+        "goal": "High-impact brand reinforcement and emotional connection."
+      }
+    ],
+    "seasonalPhases": [
+      {
+        "phase": "Awareness Phase",
+        "window": "Weeks 1-4",
+        "budgetShare": null,
+        "actions": [
+          "High-visibility billboards in metro hubs",
+          "Transit advertising"
+        ]
+      },
+      {
+        "phase": "Engagement Phase",
+        "window": "Weeks 5-8",
+        "budgetShare": null,
+        "actions": [
+          "Radio spots during peak commute",
+          "Targeted social media ads"
+        ]
+      },
+      {
+        "phase": "Conversion Phase",
+        "window": "Weeks 9-12",
+        "budgetShare": null,
+        "actions": [
+          "Cinema advertising",
+          "Retail-focused digital promotions"
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "total": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "barterSavings": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "lineItems": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    }
+  }
+}

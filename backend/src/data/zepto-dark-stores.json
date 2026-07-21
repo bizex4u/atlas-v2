@@ -1,0 +1,1202 @@
+[
+  {
+    "city": "Mumbai",
+    "lat": 19.076,
+    "lng": 72.9177,
+    "name": "Zepto Mumbai #1"
+  },
+  {
+    "city": "Delhi",
+    "lat": 28.65357,
+    "lng": 77.2197,
+    "name": "Zepto Delhi #1"
+  },
+  {
+    "city": "Bengaluru",
+    "lat": 12.96138,
+    "lng": 77.56032,
+    "name": "Zepto Bengaluru #1"
+  },
+  {
+    "city": "Hyderabad",
+    "lat": 17.34797,
+    "lng": 78.45766,
+    "name": "Zepto Hyderabad #1"
+  },
+  {
+    "city": "Chennai",
+    "lat": 13.10246,
+    "lng": 80.28944,
+    "name": "Zepto Chennai #1"
+  },
+  {
+    "city": "Pune",
+    "lat": 18.55234,
+    "lng": 73.89576,
+    "name": "Zepto Pune #1"
+  },
+  {
+    "city": "Kolkata",
+    "lat": 22.54461,
+    "lng": 88.36606,
+    "name": "Zepto Kolkata #1"
+  },
+  {
+    "city": "Ahmedabad",
+    "lat": 22.99777,
+    "lng": 72.53349,
+    "name": "Zepto Ahmedabad #1"
+  },
+  {
+    "city": "Jaipur",
+    "lat": 26.94677,
+    "lng": 75.76486,
+    "name": "Zepto Jaipur #1"
+  },
+  {
+    "city": "Chandigarh",
+    "lat": 30.74917,
+    "lng": 76.8053,
+    "name": "Zepto Chandigarh #1"
+  },
+  {
+    "city": "Lucknow",
+    "lat": 26.80824,
+    "lng": 80.9825,
+    "name": "Zepto Lucknow #1"
+  },
+  {
+    "city": "Indore",
+    "lat": 22.71364,
+    "lng": 75.85122,
+    "name": "Zepto Indore #1"
+  },
+  {
+    "city": "Kochi",
+    "lat": 9.97119,
+    "lng": 76.22753,
+    "name": "Zepto Kochi #1"
+  },
+  {
+    "city": "Coimbatore",
+    "lat": 11.01245,
+    "lng": 76.94101,
+    "name": "Zepto Coimbatore #1"
+  },
+  {
+    "city": "Surat",
+    "lat": 21.13133,
+    "lng": 72.86295,
+    "name": "Zepto Surat #1"
+  },
+  {
+    "city": "Nagpur",
+    "lat": 21.16016,
+    "lng": 79.12003,
+    "name": "Zepto Nagpur #1"
+  },
+  {
+    "city": "Vadodara",
+    "lat": 22.34237,
+    "lng": 73.16638,
+    "name": "Zepto Vadodara #1"
+  },
+  {
+    "city": "Visakhapatnam",
+    "lat": 17.66337,
+    "lng": 83.17874,
+    "name": "Zepto Visakhapatnam #1"
+  },
+  {
+    "city": "Bhopal",
+    "lat": 23.23077,
+    "lng": 77.40615,
+    "name": "Zepto Bhopal #1"
+  },
+  {
+    "city": "Patna",
+    "lat": 25.62503,
+    "lng": 85.17391,
+    "name": "Zepto Patna #1"
+  },
+  {
+    "city": "Noida",
+    "lat": 28.55666,
+    "lng": 77.41688,
+    "name": "Zepto Noida #1"
+  },
+  {
+    "city": "Gurgaon",
+    "lat": 28.42311,
+    "lng": 77.00413,
+    "name": "Zepto Gurgaon #1"
+  },
+  {
+    "city": "Thane",
+    "lat": 19.20651,
+    "lng": 72.9402,
+    "name": "Zepto Thane #1"
+  },
+  {
+    "city": "Nashik",
+    "lat": 20.03692,
+    "lng": 73.79199,
+    "name": "Zepto Nashik #1"
+  },
+  {
+    "city": "Mysuru",
+    "lat": 12.29743,
+    "lng": 76.67847,
+    "name": "Zepto Mysuru #1"
+  },
+  {
+    "city": "Mumbai",
+    "lat": 19.03616,
+    "lng": 72.89641,
+    "name": "Zepto Mumbai #2"
+  },
+  {
+    "city": "Delhi",
+    "lat": 28.62254,
+    "lng": 77.17994,
+    "name": "Zepto Delhi #2"
+  },
+  {
+    "city": "Bengaluru",
+    "lat": 13.00922,
+    "lng": 77.56034,
+    "name": "Zepto Bengaluru #2"
+  },
+  {
+    "city": "Hyderabad",
+    "lat": 17.36667,
+    "lng": 78.49743,
+    "name": "Zepto Hyderabad #2"
+  },
+  {
+    "city": "Chennai",
+    "lat": 13.04981,
+    "lng": 80.3107,
+    "name": "Zepto Chennai #2"
+  },
+  {
+    "city": "Pune",
+    "lat": 18.54721,
+    "lng": 73.86737,
+    "name": "Zepto Pune #2"
+  },
+  {
+    "city": "Kolkata",
+    "lat": 22.59858,
+    "lng": 88.32961,
+    "name": "Zepto Kolkata #2"
+  },
+  {
+    "city": "Ahmedabad",
+    "lat": 22.98899,
+    "lng": 72.54239,
+    "name": "Zepto Ahmedabad #2"
+  },
+  {
+    "city": "Jaipur",
+    "lat": 26.89505,
+    "lng": 75.80607,
+    "name": "Zepto Jaipur #2"
+  },
+  {
+    "city": "Chandigarh",
+    "lat": 30.77128,
+    "lng": 76.81846,
+    "name": "Zepto Chandigarh #2"
+  },
+  {
+    "city": "Lucknow",
+    "lat": 26.85426,
+    "lng": 80.94832,
+    "name": "Zepto Lucknow #2"
+  },
+  {
+    "city": "Indore",
+    "lat": 22.67967,
+    "lng": 75.81978,
+    "name": "Zepto Indore #2"
+  },
+  {
+    "city": "Kochi",
+    "lat": 9.93392,
+    "lng": 76.24489,
+    "name": "Zepto Kochi #2"
+  },
+  {
+    "city": "Coimbatore",
+    "lat": 11.05602,
+    "lng": 76.98173,
+    "name": "Zepto Coimbatore #2"
+  },
+  {
+    "city": "Surat",
+    "lat": 21.15737,
+    "lng": 72.86738,
+    "name": "Zepto Surat #2"
+  },
+  {
+    "city": "Nagpur",
+    "lat": 21.10988,
+    "lng": 79.08168,
+    "name": "Zepto Nagpur #2"
+  },
+  {
+    "city": "Vadodara",
+    "lat": 22.32929,
+    "lng": 73.14143,
+    "name": "Zepto Vadodara #2"
+  },
+  {
+    "city": "Visakhapatnam",
+    "lat": 17.71703,
+    "lng": 83.20374,
+    "name": "Zepto Visakhapatnam #2"
+  },
+  {
+    "city": "Bhopal",
+    "lat": 23.23002,
+    "lng": 77.44448,
+    "name": "Zepto Bhopal #2"
+  },
+  {
+    "city": "Patna",
+    "lat": 25.57157,
+    "lng": 85.16941,
+    "name": "Zepto Patna #2"
+  },
+  {
+    "city": "Noida",
+    "lat": 28.57118,
+    "lng": 77.37614,
+    "name": "Zepto Noida #2"
+  },
+  {
+    "city": "Gurgaon",
+    "lat": 28.47283,
+    "lng": 76.98684,
+    "name": "Zepto Gurgaon #2"
+  },
+  {
+    "city": "Thane",
+    "lat": 19.17918,
+    "lng": 72.97169,
+    "name": "Zepto Thane #2"
+  },
+  {
+    "city": "Nashik",
+    "lat": 19.99425,
+    "lng": 73.82613,
+    "name": "Zepto Nashik #2"
+  },
+  {
+    "city": "Mysuru",
+    "lat": 12.33575,
+    "lng": 76.66525,
+    "name": "Zepto Mysuru #2"
+  },
+  {
+    "city": "Mumbai",
+    "lat": 19.06896,
+    "lng": 72.8552,
+    "name": "Zepto Mumbai #3"
+  },
+  {
+    "city": "Delhi",
+    "lat": 28.57576,
+    "lng": 77.17111,
+    "name": "Zepto Delhi #3"
+  },
+  {
+    "city": "Bengaluru",
+    "lat": 12.98847,
+    "lng": 77.59683,
+    "name": "Zepto Bengaluru #3"
+  },
+  {
+    "city": "Hyderabad",
+    "lat": 17.41879,
+    "lng": 78.52578,
+    "name": "Zepto Hyderabad #3"
+  },
+  {
+    "city": "Chennai",
+    "lat": 13.05712,
+    "lng": 80.28938,
+    "name": "Zepto Chennai #3"
+  },
+  {
+    "city": "Pune",
+    "lat": 18.4932,
+    "lng": 73.82761,
+    "name": "Zepto Pune #3"
+  },
+  {
+    "city": "Kolkata",
+    "lat": 22.60519,
+    "lng": 88.32966,
+    "name": "Zepto Kolkata #3"
+  },
+  {
+    "city": "Ahmedabad",
+    "lat": 23.0413,
+    "lng": 72.58217,
+    "name": "Zepto Ahmedabad #3"
+  },
+  {
+    "city": "Jaipur",
+    "lat": 26.87497,
+    "lng": 75.8273,
+    "name": "Zepto Jaipur #3"
+  },
+  {
+    "city": "Chandigarh",
+    "lat": 30.72414,
+    "lng": 76.79003,
+    "name": "Zepto Chandigarh #3"
+  },
+  {
+    "city": "Lucknow",
+    "lat": 26.88649,
+    "lng": 80.91189,
+    "name": "Zepto Lucknow #3"
+  },
+  {
+    "city": "Indore",
+    "lat": 22.7185,
+    "lng": 75.82871,
+    "name": "Zepto Indore #3"
+  },
+  {
+    "city": "Kochi",
+    "lat": 9.89169,
+    "lng": 76.2861,
+    "name": "Zepto Kochi #3"
+  },
+  {
+    "city": "Coimbatore",
+    "lat": 11.02808,
+    "lng": 76.99485,
+    "name": "Zepto Coimbatore #3"
+  },
+  {
+    "city": "Surat",
+    "lat": 21.2068,
+    "lng": 72.83319,
+    "name": "Zepto Surat #3"
+  },
+  {
+    "city": "Nagpur",
+    "lat": 21.12509,
+    "lng": 79.05027,
+    "name": "Zepto Nagpur #3"
+  },
+  {
+    "city": "Vadodara",
+    "lat": 22.27593,
+    "lng": 73.15882,
+    "name": "Zepto Vadodara #3"
+  },
+  {
+    "city": "Visakhapatnam",
+    "lat": 17.71557,
+    "lng": 83.24446,
+    "name": "Zepto Visakhapatnam #3"
+  },
+  {
+    "city": "Bhopal",
+    "lat": 23.28375,
+    "lng": 77.44887,
+    "name": "Zepto Bhopal #3"
+  },
+  {
+    "city": "Patna",
+    "lat": 25.55918,
+    "lng": 85.13105,
+    "name": "Zepto Patna #3"
+  },
+  {
+    "city": "Noida",
+    "lat": 28.52064,
+    "lng": 77.35123,
+    "name": "Zepto Noida #3"
+  },
+  {
+    "city": "Gurgaon",
+    "lat": 28.49824,
+    "lng": 77.01188,
+    "name": "Zepto Gurgaon #3"
+  },
+  {
+    "city": "Thane",
+    "lat": 19.22317,
+    "lng": 73.01,
+    "name": "Zepto Thane #3"
+  },
+  {
+    "city": "Nashik",
+    "lat": 19.9575,
+    "lng": 73.82159,
+    "name": "Zepto Nashik #3"
+  },
+  {
+    "city": "Mysuru",
+    "lat": 12.30123,
+    "lng": 76.62451,
+    "name": "Zepto Mysuru #3"
+  },
+  {
+    "city": "Mumbai",
+    "lat": 19.1146,
+    "lng": 72.83794,
+    "name": "Zepto Mumbai #4"
+  },
+  {
+    "city": "Delhi",
+    "lat": 28.59852,
+    "lng": 77.20262,
+    "name": "Zepto Delhi #4"
+  },
+  {
+    "city": "Bengaluru",
+    "lat": 12.93697,
+    "lng": 77.63094,
+    "name": "Zepto Bengaluru #4"
+  },
+  {
+    "city": "Hyderabad",
+    "lat": 17.40931,
+    "lng": 78.51252,
+    "name": "Zepto Hyderabad #4"
+  },
+  {
+    "city": "Chennai",
+    "lat": 13.11107,
+    "lng": 80.24817,
+    "name": "Zepto Chennai #4"
+  },
+  {
+    "city": "Pune",
+    "lat": 18.48878,
+    "lng": 73.81883,
+    "name": "Zepto Pune #4"
+  },
+  {
+    "city": "Kolkata",
+    "lat": 22.55238,
+    "lng": 88.36616,
+    "name": "Zepto Kolkata #4"
+  },
+  {
+    "city": "Ahmedabad",
+    "lat": 23.05933,
+    "lng": 72.61049,
+    "name": "Zepto Ahmedabad #4"
+  },
+  {
+    "city": "Jaipur",
+    "lat": 26.92313,
+    "lng": 75.80595,
+    "name": "Zepto Jaipur #4"
+  },
+  {
+    "city": "Chandigarh",
+    "lat": 30.69371,
+    "lng": 76.75029,
+    "name": "Zepto Chandigarh #4"
+  },
+  {
+    "city": "Lucknow",
+    "lat": 26.84617,
+    "lng": 80.91198,
+    "name": "Zepto Lucknow #4"
+  },
+  {
+    "city": "Indore",
+    "lat": 22.75933,
+    "lng": 75.8685,
+    "name": "Zepto Indore #4"
+  },
+  {
+    "city": "Kochi",
+    "lat": 9.92149,
+    "lng": 76.3073,
+    "name": "Zepto Kochi #4"
+  },
+  {
+    "city": "Coimbatore",
+    "lat": 10.97957,
+    "lng": 76.9664,
+    "name": "Zepto Coimbatore #4"
+  },
+  {
+    "city": "Surat",
+    "lat": 21.1895,
+    "lng": 72.79677,
+    "name": "Zepto Surat #4"
+  },
+  {
+    "city": "Nagpur",
+    "lat": 21.17806,
+    "lng": 79.05924,
+    "name": "Zepto Nagpur #4"
+  },
+  {
+    "city": "Vadodara",
+    "lat": 22.27959,
+    "lng": 73.20003,
+    "name": "Zepto Vadodara #4"
+  },
+  {
+    "city": "Visakhapatnam",
+    "lat": 17.66166,
+    "lng": 83.25754,
+    "name": "Zepto Visakhapatnam #4"
+  },
+  {
+    "city": "Bhopal",
+    "lat": 23.29399,
+    "lng": 77.41465,
+    "name": "Zepto Bhopal #4"
+  },
+  {
+    "city": "Patna",
+    "lat": 25.61046,
+    "lng": 85.09966,
+    "name": "Zepto Patna #4"
+  },
+  {
+    "city": "Noida",
+    "lat": 28.49719,
+    "lng": 77.36865,
+    "name": "Zepto Noida #4"
+  },
+  {
+    "city": "Gurgaon",
+    "lat": 28.45302,
+    "lng": 77.05258,
+    "name": "Zepto Gurgaon #4"
+  },
+  {
+    "city": "Thane",
+    "lat": 19.25828,
+    "lng": 73.01435,
+    "name": "Zepto Thane #4"
+  },
+  {
+    "city": "Nashik",
+    "lat": 19.99368,
+    "lng": 73.78321,
+    "name": "Zepto Nashik #4"
+  },
+  {
+    "city": "Mysuru",
+    "lat": 12.25681,
+    "lng": 76.59962,
+    "name": "Zepto Mysuru #4"
+  },
+  {
+    "city": "Mumbai",
+    "lat": 19.08987,
+    "lng": 72.86301,
+    "name": "Zepto Mumbai #5"
+  },
+  {
+    "city": "Delhi",
+    "lat": 28.64932,
+    "lng": 77.24092,
+    "name": "Zepto Delhi #5"
+  },
+  {
+    "city": "Bengaluru",
+    "lat": 12.94861,
+    "lng": 77.62637,
+    "name": "Zepto Bengaluru #5"
+  },
+  {
+    "city": "Hyderabad",
+    "lat": 17.3555,
+    "lng": 78.47178,
+    "name": "Zepto Hyderabad #5"
+  },
+  {
+    "city": "Chennai",
+    "lat": 13.11329,
+    "lng": 80.23095,
+    "name": "Zepto Chennai #5"
+  },
+  {
+    "city": "Pune",
+    "lat": 18.54201,
+    "lng": 73.85036,
+    "name": "Zepto Pune #5"
+  },
+  {
+    "city": "Kolkata",
+    "lat": 22.53644,
+    "lng": 88.40026,
+    "name": "Zepto Kolkata #5"
+  },
+  {
+    "city": "Ahmedabad",
+    "lat": 23.01021,
+    "lng": 72.5972,
+    "name": "Zepto Ahmedabad #5"
+  },
+  {
+    "city": "Jaipur",
+    "lat": 26.95173,
+    "lng": 75.76474,
+    "name": "Zepto Jaipur #5"
+  },
+  {
+    "city": "Chandigarh",
+    "lat": 30.73546,
+    "lng": 76.74154,
+    "name": "Zepto Chandigarh #5"
+  },
+  {
+    "city": "Lucknow",
+    "lat": 26.80681,
+    "lng": 80.9485,
+    "name": "Zepto Lucknow #5"
+  },
+  {
+    "city": "Indore",
+    "lat": 22.72772,
+    "lng": 75.89679,
+    "name": "Zepto Indore #5"
+  },
+  {
+    "city": "Kochi",
+    "lat": 9.96899,
+    "lng": 76.28592,
+    "name": "Zepto Kochi #5"
+  },
+  {
+    "city": "Coimbatore",
+    "lat": 10.99894,
+    "lng": 76.92667,
+    "name": "Zepto Coimbatore #5"
+  },
+  {
+    "city": "Surat",
+    "lat": 21.13701,
+    "lng": 72.7969,
+    "name": "Zepto Surat #5"
+  },
+  {
+    "city": "Nagpur",
+    "lat": 21.17221,
+    "lng": 79.09904,
+    "name": "Zepto Nagpur #5"
+  },
+  {
+    "city": "Vadodara",
+    "lat": 22.33359,
+    "lng": 73.2212,
+    "name": "Zepto Vadodara #5"
+  },
+  {
+    "city": "Visakhapatnam",
+    "lat": 17.65359,
+    "lng": 83.22906,
+    "name": "Zepto Visakhapatnam #5"
+  },
+  {
+    "city": "Bhopal",
+    "lat": 23.24207,
+    "lng": 77.37825,
+    "name": "Zepto Bhopal #5"
+  },
+  {
+    "city": "Patna",
+    "lat": 25.63191,
+    "lng": 85.10866,
+    "name": "Zepto Patna #5"
+  },
+  {
+    "city": "Noida",
+    "lat": 28.54358,
+    "lng": 77.40987,
+    "name": "Zepto Noida #5"
+  },
+  {
+    "city": "Gurgaon",
+    "lat": 28.41961,
+    "lng": 77.06563,
+    "name": "Zepto Gurgaon #5"
+  },
+  {
+    "city": "Thane",
+    "lat": 19.22049,
+    "lng": 72.98012,
+    "name": "Zepto Thane #5"
+  },
+  {
+    "city": "Nashik",
+    "lat": 20.03682,
+    "lng": 73.75185,
+    "name": "Zepto Nashik #5"
+  },
+  {
+    "city": "Mysuru",
+    "lat": 12.28347,
+    "lng": 76.61708,
+    "name": "Zepto Mysuru #5"
+  },
+  {
+    "city": "Mumbai",
+    "lat": 19.03985,
+    "lng": 72.90371,
+    "name": "Zepto Mumbai #6"
+  },
+  {
+    "city": "Delhi",
+    "lat": 28.63554,
+    "lng": 77.24524,
+    "name": "Zepto Delhi #6"
+  },
+  {
+    "city": "Bengaluru",
+    "lat": 13.00217,
+    "lng": 77.58798,
+    "name": "Zepto Bengaluru #6"
+  },
+  {
+    "city": "Hyderabad",
+    "lat": 17.35548,
+    "lng": 78.44692,
+    "name": "Zepto Hyderabad #6"
+  },
+  {
+    "city": "Chennai",
+    "lat": 13.05974,
+    "lng": 80.25604,
+    "name": "Zepto Chennai #6"
+  },
+  {
+    "city": "Pune",
+    "lat": 18.55584,
+    "lng": 73.88864,
+    "name": "Zepto Pune #6"
+  },
+  {
+    "city": "Kolkata",
+    "lat": 22.58643,
+    "lng": 88.39565,
+    "name": "Zepto Kolkata #6"
+  },
+  {
+    "city": "Ahmedabad",
+    "lat": 22.9835,
+    "lng": 72.55644,
+    "name": "Zepto Ahmedabad #6"
+  },
+  {
+    "city": "Jaipur",
+    "lat": 26.90862,
+    "lng": 75.74755,
+    "name": "Zepto Jaipur #6"
+  },
+  {
+    "city": "Chandigarh",
+    "lat": 30.77328,
+    "lng": 76.77309,
+    "name": "Zepto Chandigarh #6"
+  },
+  {
+    "city": "Lucknow",
+    "lat": 26.84018,
+    "lng": 80.98257,
+    "name": "Zepto Lucknow #6"
+  },
+  {
+    "city": "Indore",
+    "lat": 22.6813,
+    "lng": 75.88347,
+    "name": "Zepto Indore #6"
+  },
+  {
+    "city": "Kochi",
+    "lat": 9.94759,
+    "lng": 76.24471,
+    "name": "Zepto Kochi #6"
+  },
+  {
+    "city": "Coimbatore",
+    "lat": 11.05087,
+    "lng": 76.91795,
+    "name": "Zepto Coimbatore #6"
+  },
+  {
+    "city": "Surat",
+    "lat": 21.14503,
+    "lng": 72.83344,
+    "name": "Zepto Surat #6"
+  },
+  {
+    "city": "Nagpur",
+    "lat": 21.11821,
+    "lng": 79.1273,
+    "name": "Zepto Nagpur #6"
+  },
+  {
+    "city": "Vadodara",
+    "lat": 22.33948,
+    "lng": 73.19978,
+    "name": "Zepto Vadodara #6"
+  },
+  {
+    "city": "Visakhapatnam",
+    "lat": 17.70607,
+    "lng": 83.18934,
+    "name": "Zepto Visakhapatnam #6"
+  },
+  {
+    "city": "Bhopal",
+    "lat": 23.22266,
+    "lng": 77.37842,
+    "name": "Zepto Bhopal #6"
+  },
+  {
+    "city": "Patna",
+    "lat": 25.58443,
+    "lng": 85.14847,
+    "name": "Zepto Patna #6"
+  },
+  {
+    "city": "Noida",
+    "lat": 28.57524,
+    "lng": 77.431,
+    "name": "Zepto Noida #6"
+  },
+  {
+    "city": "Gurgaon",
+    "lat": 28.45893,
+    "lng": 77.03713,
+    "name": "Zepto Gurgaon #6"
+  },
+  {
+    "city": "Thane",
+    "lat": 19.17871,
+    "lng": 72.94373,
+    "name": "Zepto Thane #6"
+  },
+  {
+    "city": "Nashik",
+    "lat": 20.00827,
+    "lng": 73.76089,
+    "name": "Zepto Nashik #6"
+  },
+  {
+    "city": "Mysuru",
+    "lat": 12.33261,
+    "lng": 76.6583,
+    "name": "Zepto Mysuru #6"
+  },
+  {
+    "city": "Mumbai",
+    "lat": 19.05574,
+    "lng": 72.91672,
+    "name": "Zepto Mumbai #7"
+  },
+  {
+    "city": "Delhi",
+    "lat": 28.58231,
+    "lng": 77.21098,
+    "name": "Zepto Delhi #7"
+  },
+  {
+    "city": "Bengaluru",
+    "lat": 13,
+    "lng": 77.55663,
+    "name": "Zepto Bengaluru #7"
+  },
+  {
+    "city": "Hyderabad",
+    "lat": 17.40928,
+    "lng": 78.46441,
+    "name": "Zepto Hyderabad #7"
+  },
+  {
+    "city": "Chennai",
+    "lat": 13.04805,
+    "lng": 80.29674,
+    "name": "Zepto Chennai #7"
+  },
+  {
+    "city": "Pune",
+    "lat": 18.50505,
+    "lng": 73.89292,
+    "name": "Zepto Pune #7"
+  },
+  {
+    "city": "Kolkata",
+    "lat": 22.61121,
+    "lng": 88.35724,
+    "name": "Zepto Kolkata #7"
+  },
+  {
+    "city": "Ahmedabad",
+    "lat": 23.0279,
+    "lng": 72.53161,
+    "name": "Zepto Ahmedabad #7"
+  },
+  {
+    "city": "Jaipur",
+    "lat": 26.8724,
+    "lng": 75.77267,
+    "name": "Zepto Jaipur #7"
+  },
+  {
+    "city": "Chandigarh",
+    "lat": 30.73821,
+    "lng": 76.81136,
+    "name": "Zepto Chandigarh #7"
+  },
+  {
+    "city": "Lucknow",
+    "lat": 26.88543,
+    "lng": 80.97792,
+    "name": "Zepto Lucknow #7"
+  },
+  {
+    "city": "Indore",
+    "lat": 22.70471,
+    "lng": 75.84271,
+    "name": "Zepto Indore #7"
+  },
+  {
+    "city": "Kochi",
+    "lat": 9.8963,
+    "lng": 76.22756,
+    "name": "Zepto Kochi #7"
+  },
+  {
+    "city": "Coimbatore",
+    "lat": 11.04068,
+    "lng": 76.94953,
+    "name": "Zepto Coimbatore #7"
+  },
+  {
+    "city": "Surat",
+    "lat": 21.19894,
+    "lng": 72.86749,
+    "name": "Zepto Surat #7"
+  },
+  {
+    "city": "Nagpur",
+    "lat": 21.11451,
+    "lng": 79.11394,
+    "name": "Zepto Nagpur #7"
+  },
+  {
+    "city": "Vadodara",
+    "lat": 22.28652,
+    "lng": 73.15858,
+    "name": "Zepto Vadodara #7"
+  },
+  {
+    "city": "Visakhapatnam",
+    "lat": 17.72342,
+    "lng": 83.18066,
+    "name": "Zepto Visakhapatnam #7"
+  },
+  {
+    "city": "Bhopal",
+    "lat": 23.27114,
+    "lng": 77.41497,
+    "name": "Zepto Bhopal #7"
+  },
+  {
+    "city": "Patna",
+    "lat": 25.55458,
+    "lng": 85.17671,
+    "name": "Zepto Patna #7"
+  },
+  {
+    "city": "Noida",
+    "lat": 28.53444,
+    "lng": 77.40955,
+    "name": "Zepto Noida #7"
+  },
+  {
+    "city": "Gurgaon",
+    "lat": 28.49929,
+    "lng": 76.99742,
+    "name": "Zepto Gurgaon #7"
+  },
+  {
+    "city": "Thane",
+    "lat": 19.20911,
+    "lng": 72.94393,
+    "name": "Zepto Thane #7"
+  },
+  {
+    "city": "Nashik",
+    "lat": 19.96008,
+    "lng": 73.80071,
+    "name": "Zepto Nashik #7"
+  },
+  {
+    "city": "Mysuru",
+    "lat": 12.31464,
+    "lng": 76.6794,
+    "name": "Zepto Mysuru #7"
+  },
+  {
+    "city": "Mumbai",
+    "lat": 19.10857,
+    "lng": 72.88819,
+    "name": "Zepto Mumbai #8"
+  },
+  {
+    "city": "Delhi",
+    "lat": 28.58667,
+    "lng": 77.17462,
+    "name": "Zepto Delhi #8"
+  },
+  {
+    "city": "Bengaluru",
+    "lat": 12.94605,
+    "lng": 77.56571,
+    "name": "Zepto Bengaluru #8"
+  },
+  {
+    "city": "Hyderabad",
+    "lat": 17.41881,
+    "lng": 78.50563,
+    "name": "Zepto Hyderabad #8"
+  },
+  {
+    "city": "Chennai",
+    "lat": 13.09954,
+    "lng": 80.30972,
+    "name": "Zepto Chennai #8"
+  },
+  {
+    "city": "Pune",
+    "lat": 18.48225,
+    "lng": 73.85865,
+    "name": "Zepto Pune #8"
+  },
+  {
+    "city": "Kolkata",
+    "lat": 22.56559,
+    "lng": 88.32592,
+    "name": "Zepto Kolkata #8"
+  },
+  {
+    "city": "Ahmedabad",
+    "lat": 23.06246,
+    "lng": 72.54914,
+    "name": "Zepto Ahmedabad #8"
+  },
+  {
+    "city": "Jaipur",
+    "lat": 26.90911,
+    "lng": 75.81337,
+    "name": "Zepto Jaipur #8"
+  },
+  {
+    "city": "Chandigarh",
+    "lat": 30.69419,
+    "lng": 76.81561,
+    "name": "Zepto Chandigarh #8"
+  },
+  {
+    "city": "Lucknow",
+    "lat": 26.86007,
+    "lng": 80.93951,
+    "name": "Zepto Lucknow #8"
+  },
+  {
+    "city": "Indore",
+    "lat": 22.75526,
+    "lng": 75.81791,
+    "name": "Zepto Indore #8"
+  },
+  {
+    "city": "Kochi",
+    "lat": 9.90864,
+    "lng": 76.25271,
+    "name": "Zepto Kochi #8"
+  },
+  {
+    "city": "Coimbatore",
+    "lat": 10.98695,
+    "lng": 76.98778,
+    "name": "Zepto Coimbatore #8"
+  },
+  {
+    "city": "Surat",
+    "lat": 21.20045,
+    "lng": 72.8628,
+    "name": "Zepto Surat #8"
+  },
+  {
+    "city": "Nagpur",
+    "lat": 21.16786,
+    "lng": 79.07318,
+    "name": "Zepto Nagpur #8"
+  },
+  {
+    "city": "Vadodara",
+    "lat": 22.27127,
+    "lng": 73.14146,
+    "name": "Zepto Vadodara #8"
+  },
+  {
+    "city": "Visakhapatnam",
+    "lat": 17.674,
+    "lng": 83.21226,
+    "name": "Zepto Visakhapatnam #8"
+  },
+  {
+    "city": "Bhopal",
+    "lat": 23.29913,
+    "lng": 77.449,
+    "name": "Zepto Bhopal #8"
+  },
+  {
+    "city": "Patna",
+    "lat": 25.59679,
+    "lng": 85.16331,
+    "name": "Zepto Patna #8"
+  },
+  {
+    "city": "Noida",
+    "lat": 28.49558,
+    "lng": 77.36836,
+    "name": "Zepto Noida #8"
+  },
+  {
+    "city": "Gurgaon",
+    "lat": 28.4671,
+    "lng": 76.98877,
+    "name": "Zepto Gurgaon #8"
+  },
+  {
+    "city": "Thane",
+    "lat": 19.25626,
+    "lng": 72.98051,
+    "name": "Zepto Thane #8"
+  },
+  {
+    "city": "Nashik",
+    "lat": 19.98012,
+    "lng": 73.82892,
+    "name": "Zepto Nashik #8"
+  },
+  {
+    "city": "Mysuru",
+    "lat": 12.26231,
+    "lng": 76.65792,
+    "name": "Zepto Mysuru #8"
+  }
+]

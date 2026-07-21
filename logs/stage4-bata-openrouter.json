@@ -1,0 +1,84 @@
+{
+  "brand": {
+    "name": {
+      "value": "Bata India",
+      "confidence": "estimated"
+    },
+    "category": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "hq": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "revenue": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "cagr": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "totalStores": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "pricePoint": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "ambassador": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "activeCampaign": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "pillars": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    }
+  },
+  "markets": [],
+  "competitors": {
+    "value": null,
+    "confidence": "needs_input"
+  },
+  "mediaPlan": {
+    "sequencing": [],
+    "seasonalPhases": []
+  },
+  "budget": {
+    "total": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "barterSavings": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    },
+    "lineItems": {
+      "value": null,
+      "confidence": "needs_input",
+      "reason": "insufficient_sources"
+    }
+  },
+  "_meta": {
+    "note": "OpenRouter returned 401 User not found on every call; Gemini failover also returned empty/needs_input. Brief matches backend console output from run 2026-07-20T16:45.",
+    "runAgentLogsPrefix": "2026-07-20T16-45-3",
+    "brandQueried": "Bata India"
+  }
+}
