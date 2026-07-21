@@ -92,5 +92,24 @@ export function validateCampaignBrief(brief: CampaignBrief): BriefValidation {
     };
   }
 
+  // Provenance gate (defense-in-depth behind the Strategy allowedMarkets
+  // filter): if markets exist but every one carries zero geo signal
+  // (no stores, no clusters), the pipeline produced no real footprint/geo
+  // intelligence — reject rather than present hollow or invented metros as a
+  // plan. Catches the Bata failure mode and too-thin HQ-seed-only briefs.
+  if (
+    brief.markets.length > 0 &&
+    brief.markets.every((m) => (m.storeCount ?? 0) === 0 && (m.clusters?.length ?? 0) === 0)
+  ) {
+    return {
+      ok: false,
+      filled,
+      total,
+      needsInputRatio,
+      reason:
+        'All priority markets lack store/cluster geo signal — no verified footprint intelligence to ground the plan.',
+    };
+  }
+
   return { ok: true, filled, total, needsInputRatio };
 }

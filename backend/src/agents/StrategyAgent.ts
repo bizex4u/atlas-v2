@@ -84,7 +84,7 @@ Rules:
 - Sequencing should cover ~12 weeks (OOH → FM/Digital → Cinema or similar).
 - Budget figures must be clearly labeled as estimates if research lacked hard numbers; use null rather than inventing precise rupee figures.
 - Do not fabricate store counts or revenue numbers not present in the input or evidence.
-- priorityMarkets names should come from geo/footprint when available.
+- priorityMarkets names MUST be chosen ONLY from the market names present in RESEARCH.geo.markets. Never introduce a city not in that list. If geo.markets is empty, return priorityMarkets: [].
 
 RESEARCH:
 ${JSON.stringify(payload).slice(0, 20000)}`;
@@ -139,22 +139,28 @@ ${JSON.stringify(payload).slice(0, 20000)}`;
 
     const geoMarkets = context.geo?.markets ?? [];
     const evidenceRefs = refsFromIds(evidenceIds);
+    // Structural anti-invention gate: a priority market may ONLY exist if it
+    // maps to a real Geo market (footprint-derived or HQ-seed). The LLM cannot
+    // introduce a metro that Geo never produced. Empty geo → empty markets →
+    // honest failure, never fabricated Gurugram/Delhi/Mumbai.
     const priorityMarkets = (data.priorityMarkets ?? [])
       .filter((m) => typeof m?.name === 'string' && m.name.trim())
+      .map((m) => ({
+        m,
+        geo: geoMarkets.find((g) => g.name.toLowerCase() === m.name!.trim().toLowerCase()),
+      }))
+      .filter((x): x is { m: typeof x.m; geo: (typeof geoMarkets)[number] } => Boolean(x.geo))
       .slice(0, 3)
-      .map((m) => {
-        const geo = geoMarkets.find(
-          (g) => g.name.toLowerCase() === m.name!.toLowerCase(),
-        );
+      .map(({ m, geo }) => {
         return {
-          name: m.name!.trim(),
+          name: geo.name, // canonical Geo name, not the LLM's spelling
           priority: (m.priority ?? 'P1') as 'P1' | 'P2' | 'P3',
           rationale: m.rationale ?? '',
           budgetAllocation: m.budgetAllocation ?? '',
-          storeCount: geo?.storeCount ?? 0,
-          clusters: geo?.clusters ?? [],
-          highways: geo?.highways ?? [],
-          zeptoOverlap: geo?.zeptoOverlap ?? 0,
+          storeCount: geo.storeCount,
+          clusters: geo.clusters,
+          highways: geo.highways,
+          zeptoOverlap: geo.zeptoOverlap,
           evidence: evidenceRefs,
         };
       });

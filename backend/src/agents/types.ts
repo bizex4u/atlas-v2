@@ -74,6 +74,11 @@ export type GeoMarket = {
   clusters: GeoCluster[];
   highways: GeoHighway[];
   zeptoOverlap: number;
+  /** Provenance of this market. 'footprint' = derived from real store cities.
+   *  'hq-fallback' = estimated seed from Discovery HQ when footprint was empty
+   *  (honest placeholder so planners have a legitimate anchor instead of
+   *  inventing metros). Absent = footprint-derived (back-compat). */
+  seed?: 'footprint' | 'hq-fallback';
 };
 
 export type GeoResult = AgentResultBase & {

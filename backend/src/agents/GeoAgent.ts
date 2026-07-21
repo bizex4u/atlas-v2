@@ -107,13 +107,20 @@ export class GeoAgent implements Agent<GeoResult> {
   async run(brandName: string, context: AgentContext): Promise<GeoResult> {
     const cities = context.footprint?.storesByCity.value ?? [];
     if (!cities.length) {
-      const empty: GeoResult = {
-        markets: [],
+      // Footprint empty → seed one estimated market from Discovery HQ so
+      // downstream planners have a legitimate anchor to select from, instead
+      // of inventing metros. If HQ is unknown too, markets stays [] and the
+      // brief fails honestly (never LLM-fabricated).
+      const seeded = this.hqSeedMarkets(context);
+      const result: GeoResult = {
+        markets: seeded,
         partial: true,
-        error: 'No footprint cities to enrich',
+        error: seeded.length
+          ? 'No footprint cities — seeded estimated market from HQ'
+          : 'No footprint cities and no resolvable HQ',
       };
-      logAgentRaw(this.name, brandName, empty);
-      return empty;
+      logAgentRaw(this.name, brandName, result);
+      return result;
     }
 
     const zepto = loadZepto();
@@ -136,6 +143,40 @@ export class GeoAgent implements Agent<GeoResult> {
   }
 
   private inMemory(cities: StoreCity[], zepto: ZeptoStore[]): GeoMarket[] {
+    return this.buildMarkets(cities, zepto);
+  }
+
+  /** Estimated seed market from Discovery HQ when footprint is empty.
+   *  Zero stores, flagged 'hq-fallback' so the provenance validator and UI
+   *  present it as estimated — never as a verified market. Deterministic. */
+  private hqSeedMarkets(context: AgentContext): GeoMarket[] {
+    const hqRaw = context.discovery?.hq?.value;
+    if (!hqRaw || typeof hqRaw !== 'string') return [];
+    // HQ strings look like "Kolkata, India" / "Gurugram, Haryana, India".
+    const cityPart = hqRaw.split(',')[0]?.trim().toLowerCase() ?? '';
+    if (!cityPart) return [];
+    const key = CITY_COORDS[cityPart] ? cityPart : cityPart.replace(/\s+/g, '');
+    if (!CITY_COORDS[key]) return []; // unknown city → no fabricated coords
+    const displayName = cityPart.replace(/\b\w/g, (c) => c.toUpperCase());
+    const highways: GeoHighway[] = (HIGHWAY_LOOKUP[key] ?? []).map((h) => ({
+      city: displayName,
+      nh: h.nh,
+      corridor: h.corridor,
+      sites: h.sites,
+    }));
+    return [
+      {
+        name: displayName,
+        storeCount: 0,
+        clusters: [],
+        highways,
+        zeptoOverlap: 0,
+        seed: 'hq-fallback',
+      },
+    ];
+  }
+
+  private buildMarkets(cities: StoreCity[], zepto: ZeptoStore[]): GeoMarket[] {
     // Cluster by city proximity to metro hubs (simple DBSCAN-like grouping)
     const points = cities.map((c) => {
       const coord =
@@ -182,6 +223,7 @@ export class GeoAgent implements Agent<GeoResult> {
         ].filter((c) => c.count > 0),
         highways,
         zeptoOverlap,
+        seed: 'footprint' as const,
       };
     });
 
