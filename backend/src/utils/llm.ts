@@ -7,7 +7,7 @@ import {
 } from './evidenceContext.js';
 import { logInfo, logWarn } from './logger.js';
 
-export type LlmProviderName = 'openrouter' | 'gemini';
+export type LlmProviderName = 'groq' | 'openrouter' | 'gemini';
 
 export type TokenUsage = {
   promptTokens: number;
@@ -71,6 +71,17 @@ const GEMINI_MODELS = [
   'gemini-2.0-flash-lite',
 ].filter(Boolean) as string[];
 
+// Groq free tier — real, generous quota (unlike OpenRouter's churny :free
+// roster and Gemini's low daily cap). OpenAI-compatible API. Hosts strong
+// open models incl. Chinese (Qwen). Verified live 2026-07-21.
+const GROQ_MODELS = [
+  process.env.GROQ_MODEL,
+  'llama-3.3-70b-versatile',
+  'openai/gpt-oss-120b',
+  'qwen/qwen3.6-27b',
+  'llama-3.1-8b-instant',
+].filter(Boolean) as string[];
+
 /** Rough USD / 1M tokens — logging estimate only, not billing. */
 const COST_PER_MTOKEN: Record<string, { in: number; out: number }> = {
   openrouter: { in: 0.05, out: 0.05 },
@@ -79,6 +90,8 @@ const COST_PER_MTOKEN: Record<string, { in: number; out: number }> = {
 
 let openRouterClient: OpenAI | null = null;
 let openRouterKeyUsed: string | null = null;
+let groqClient: OpenAI | null = null;
+let groqKeyUsed: string | null = null;
 let geminiClient: GoogleGenerativeAI | null = null;
 let lastActiveProvider: LlmProviderName | null = null;
 let openRouterDisabledReason: string | null = null;
@@ -104,20 +117,25 @@ export function getGeminiApiKey(): string | null {
   return sanitizeApiKey(process.env.GEMINI_API_KEY);
 }
 
+export function getGroqApiKey(): string | null {
+  return sanitizeApiKey(process.env.GROQ_API_KEY);
+}
+
 export function getProviderOrder(): LlmProviderName[] {
-  const raw = (process.env.LLM_PROVIDER_ORDER ?? 'openrouter,gemini')
+  const raw = (process.env.LLM_PROVIDER_ORDER ?? 'groq,gemini,openrouter')
     .split(',')
     .map((s) => s.trim().toLowerCase())
     .filter(Boolean);
   const order = raw.filter(
-    (p): p is LlmProviderName => p === 'openrouter' || p === 'gemini',
+    (p): p is LlmProviderName => p === 'groq' || p === 'openrouter' || p === 'gemini',
   );
-  return order.length ? order : ['openrouter', 'gemini'];
+  return order.length ? order : ['groq', 'gemini', 'openrouter'];
 }
 
 export function getActiveProvider(): LlmProviderName | null {
   if (lastActiveProvider) return lastActiveProvider;
   for (const p of getProviderOrder()) {
+    if (p === 'groq' && getGroqApiKey()) return p;
     if (p === 'openrouter' && getOpenRouterApiKey() && !openRouterDisabledReason) {
       return p;
     }
@@ -127,7 +145,7 @@ export function getActiveProvider(): LlmProviderName | null {
 }
 
 export function hasAnyLlmProvider(): boolean {
-  return Boolean(getOpenRouterApiKey() || getGeminiApiKey());
+  return Boolean(getGroqApiKey() || getOpenRouterApiKey() || getGeminiApiKey());
 }
 
 function getOpenRouter(): OpenAI {
@@ -146,6 +164,19 @@ function getOpenRouter(): OpenAI {
     openRouterDisabledReason = null;
   }
   return openRouterClient;
+}
+
+function getGroq(): OpenAI {
+  const key = getGroqApiKey();
+  if (!key) throw new Error('GROQ_API_KEY is not set');
+  if (!groqClient || groqKeyUsed !== key) {
+    groqClient = new OpenAI({
+      apiKey: key,
+      baseURL: 'https://api.groq.com/openai/v1',
+    });
+    groqKeyUsed = key;
+  }
+  return groqClient;
 }
 
 function getGemini(): GoogleGenerativeAI {
@@ -282,6 +313,72 @@ type ProviderCallResult = {
   model: string;
   usage: TokenUsage | null;
 };
+
+async function callGroq(
+  systemPrompt: string,
+  userMessage: string,
+  maxRetries: number,
+  signal?: AbortSignal,
+): Promise<ProviderCallResult> {
+  if (signal?.aborted) throw new Error('aborted');
+  const client = getGroq();
+  let lastErr: unknown;
+
+  for (const model of GROQ_MODELS) {
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+      if (signal?.aborted) throw new Error('aborted');
+      try {
+        const completion = await client.chat.completions.create(
+          {
+            model,
+            temperature: 0.2,
+            messages: [
+              { role: 'system', content: systemPrompt },
+              { role: 'user', content: userMessage },
+            ],
+          },
+          signal ? { signal } : undefined,
+        );
+
+        const raw = completion.choices[0]?.message?.content ?? '';
+        if (!raw.trim()) throw new Error('Empty Groq response');
+
+        const usage: TokenUsage | null = completion.usage
+          ? {
+              promptTokens: completion.usage.prompt_tokens ?? 0,
+              completionTokens: completion.usage.completion_tokens ?? 0,
+              totalTokens:
+                completion.usage.total_tokens ??
+                (completion.usage.prompt_tokens ?? 0) + (completion.usage.completion_tokens ?? 0),
+            }
+          : {
+              promptTokens: estimateTokensFromText(systemPrompt + userMessage),
+              completionTokens: estimateTokensFromText(raw),
+              totalTokens: 0,
+            };
+        if (usage && usage.totalTokens === 0) {
+          usage.totalTokens = usage.promptTokens + usage.completionTokens;
+        }
+
+        return { raw, model, usage };
+      } catch (err) {
+        lastErr = err;
+        logWarn(`[llm] groq model=${model} attempt=${attempt + 1} failed`, {
+          error: errMessage(err).slice(0, 240),
+        });
+        if (isAuthError(err)) {
+          throw new Error(
+            'GROQ_API_KEY rejected (401). Create a key at https://console.groq.com/keys and update .env.',
+          );
+        }
+        if (!isRetryable(err) || attempt === maxRetries) break;
+        await new Promise((r) => setTimeout(r, 1500 * (attempt + 1)));
+      }
+    }
+  }
+
+  throw lastErr instanceof Error ? lastErr : new Error('Groq failed for all models');
+}
 
 async function callOpenRouter(
   systemPrompt: string,
@@ -444,6 +541,7 @@ export async function callLLM<T = unknown>(
   const started = Date.now();
 
   for (const provider of order) {
+    if (provider === 'groq' && !getGroqApiKey()) continue;
     if (provider === 'openrouter') {
       if (!getOpenRouterApiKey() || openRouterDisabledReason) continue;
     }
@@ -451,9 +549,11 @@ export async function callLLM<T = unknown>(
 
     try {
       const result =
-        provider === 'openrouter'
-          ? await callOpenRouter(systemPrompt, userMessage, maxRetries, signal)
-          : await callGemini(systemPrompt, userMessage, maxRetries, signal);
+        provider === 'groq'
+          ? await callGroq(systemPrompt, userMessage, maxRetries, signal)
+          : provider === 'openrouter'
+            ? await callOpenRouter(systemPrompt, userMessage, maxRetries, signal)
+            : await callGemini(systemPrompt, userMessage, maxRetries, signal);
 
       lastActiveProvider = provider;
       const latencyMs = Date.now() - started;
