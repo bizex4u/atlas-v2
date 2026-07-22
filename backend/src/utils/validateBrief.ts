@@ -93,13 +93,19 @@ export function validateCampaignBrief(brief: CampaignBrief): BriefValidation {
   }
 
   // Provenance gate (defense-in-depth behind the Strategy allowedMarkets
-  // filter): if markets exist but every one carries zero geo signal
-  // (no stores, no clusters), the pipeline produced no real footprint/geo
-  // intelligence — reject rather than present hollow or invented metros as a
-  // plan. Catches the Bata failure mode and too-thin HQ-seed-only briefs.
+  // filter): a market must carry REAL geo signal — either store footprint
+  // (stores/clusters) OR evidence-cited demand (demandScore > 0, the
+  // "advertise where interest is high" model). Reject only if EVERY market
+  // has neither — that's an HQ-seed-only or invented set with nothing to
+  // ground a plan on. A demand-signal market is legitimate geo intelligence.
   if (
     brief.markets.length > 0 &&
-    brief.markets.every((m) => (m.storeCount ?? 0) === 0 && (m.clusters?.length ?? 0) === 0)
+    brief.markets.every(
+      (m) =>
+        (m.storeCount ?? 0) === 0 &&
+        (m.clusters?.length ?? 0) === 0 &&
+        (m.demandScore ?? 0) === 0,
+    )
   ) {
     return {
       ok: false,
@@ -107,7 +113,7 @@ export function validateCampaignBrief(brief: CampaignBrief): BriefValidation {
       total,
       needsInputRatio,
       reason:
-        'All priority markets lack store/cluster geo signal — no verified footprint intelligence to ground the plan.',
+        'No priority market has store, cluster, or demand signal — no verified geo intelligence to ground the plan.',
     };
   }
 

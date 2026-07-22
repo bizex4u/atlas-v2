@@ -74,11 +74,18 @@ export type GeoMarket = {
   clusters: GeoCluster[];
   highways: GeoHighway[];
   zeptoOverlap: number;
-  /** Provenance of this market. 'footprint' = derived from real store cities.
-   *  'hq-fallback' = estimated seed from Discovery HQ when footprint was empty
-   *  (honest placeholder so planners have a legitimate anchor instead of
-   *  inventing metros). Absent = footprint-derived (back-compat). */
-  seed?: 'footprint' | 'hq-fallback';
+  /** Provenance of this market:
+   *  'footprint'   = derived from real store cities.
+   *  'demand'      = city where the brand shows real digital/editorial demand
+   *                  signal in the retrieved evidence (news mentions, expansion,
+   *                  sales) — the "advertise where interest is high" model.
+   *  'hq-fallback' = estimated seed from Discovery HQ, last resort. */
+  seed?: 'footprint' | 'demand' | 'hq-fallback';
+  /** 0-100 demand signal for this city, from evidence-cited brand activity.
+   *  A market with demandScore > 0 carries real geo signal even with 0 stores. */
+  demandScore?: number;
+  /** Evidence-cited reason this city is a demand market (why advertise here). */
+  demandReason?: string;
 };
 
 export type GeoResult = AgentResultBase & {
@@ -95,6 +102,8 @@ export type StrategyResult = AgentResultBase & {
     clusters: GeoCluster[];
     highways: GeoHighway[];
     zeptoOverlap: number;
+    demandScore?: number;
+    demandReason?: string;
     evidence?: EvidenceReference[];
   }>;
   sequencing: Array<{

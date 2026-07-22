@@ -142,6 +142,8 @@ export function assembleCampaignBrief(input: {
       rationale: m.rationale,
       budgetAllocation: m.budgetAllocation,
       geoMarketId: m.name,
+      demandScore: m.demandScore,
+      demandReason: m.demandReason,
       evidence: m.evidence ?? [],
     })),
     competitors: competitorsField,

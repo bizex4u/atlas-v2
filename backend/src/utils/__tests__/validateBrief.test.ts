@@ -63,7 +63,18 @@ describe('validateCampaignBrief — provenance gate', () => {
       }),
     );
     assert.equal(res.ok, false);
-    assert.match(res.reason ?? '', /geo signal|footprint/i);
+    assert.match(res.reason ?? '', /geo|signal|demand/i);
+  });
+
+  it('accepts a demand-signal market with 0 stores (advertise-where-interest-is-high model)', () => {
+    const res = validateCampaignBrief(
+      brief({
+        markets: [
+          market({ name: 'Kanpur', storeCount: 0, clusters: [], demandScore: 82, demandReason: 'strong Bata search + expansion news' }),
+        ],
+      }),
+    );
+    assert.equal(res.ok, true);
   });
 
   it('accepts a brief where at least one market has store signal even if others are hollow', () => {

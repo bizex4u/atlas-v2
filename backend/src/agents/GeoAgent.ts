@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import pg from 'pg';
 import { logAgentRaw, logWarn } from '../utils/logger.js';
+import { extractDemandCities } from './demandCities.js';
 import {
   type Agent,
   type AgentContext,
@@ -105,41 +106,106 @@ export class GeoAgent implements Agent<GeoResult> {
   name = 'Geo' as const;
 
   async run(brandName: string, context: AgentContext): Promise<GeoResult> {
+    const zepto = loadZepto();
     const cities = context.footprint?.storesByCity.value ?? [];
-    if (!cities.length) {
-      // Footprint empty → seed one estimated market from Discovery HQ so
-      // downstream planners have a legitimate anchor to select from, instead
-      // of inventing metros. If HQ is unknown too, markets stays [] and the
-      // brief fails honestly (never LLM-fabricated).
-      const seeded = this.hqSeedMarkets(context);
+
+    // Footprint-derived markets (real store cities), when available.
+    let footprintMarkets: GeoMarket[] = [];
+    if (cities.length) {
+      if (process.env.DATABASE_URL) {
+        try {
+          footprintMarkets = await this.withPostgis(cities, zepto);
+        } catch (err) {
+          logWarn('PostGIS geo path failed; using in-memory fallback', err);
+          footprintMarkets = this.inMemory(cities, zepto);
+        }
+      } else {
+        footprintMarkets = this.inMemory(cities, zepto);
+      }
+    }
+
+    // Demand-signal markets — the "advertise where interest is high" model.
+    // Cities where evidence shows real brand demand, even with no store data.
+    // This is what lets real retailers (whose locator data isn't scrapable)
+    // still get a grounded market list instead of an honest failure.
+    const demandMarkets = await this.demandMarkets(brandName, context, zepto, footprintMarkets);
+
+    let markets = [...footprintMarkets, ...demandMarkets];
+
+    // Last resort: neither stores nor demand cities in evidence → HQ seed.
+    if (!markets.length) {
+      markets = this.hqSeedMarkets(context);
       const result: GeoResult = {
-        markets: seeded,
+        markets,
         partial: true,
-        error: seeded.length
-          ? 'No footprint cities — seeded estimated market from HQ'
-          : 'No footprint cities and no resolvable HQ',
+        error: markets.length
+          ? 'No footprint or demand cities — seeded estimated market from HQ'
+          : 'No footprint, demand, or resolvable HQ',
       };
       logAgentRaw(this.name, brandName, result);
       return result;
     }
 
-    const zepto = loadZepto();
-    let markets: GeoMarket[];
-
-    if (process.env.DATABASE_URL) {
-      try {
-        markets = await this.withPostgis(cities, zepto);
-      } catch (err) {
-        logWarn('PostGIS geo path failed; using in-memory fallback', err);
-        markets = this.inMemory(cities, zepto);
-      }
-    } else {
-      markets = this.inMemory(cities, zepto);
-    }
-
-    const result: GeoResult = { markets };
+    markets.sort(
+      (a, b) => b.storeCount - a.storeCount || (b.demandScore ?? 0) - (a.demandScore ?? 0),
+    );
+    const result: GeoResult = { markets, partial: footprintMarkets.length === 0 };
     logAgentRaw(this.name, brandName, result);
     return result;
+  }
+
+  /** Build demand markets from evidence-cited city demand. Skips cities already
+   *  covered by footprint (those get enriched with the demand score instead). */
+  private async demandMarkets(
+    brandName: string,
+    context: AgentContext,
+    zepto: ZeptoStore[],
+    footprintMarkets: GeoMarket[],
+  ): Promise<GeoMarket[]> {
+    let demand: Awaited<ReturnType<typeof extractDemandCities>> = [];
+    try {
+      const category = context.discovery?.category?.value ?? '';
+      demand = await extractDemandCities(brandName, category, context);
+    } catch (err) {
+      logWarn('demand-city extraction failed (non-fatal)', err);
+      return [];
+    }
+    if (!demand.length) return [];
+
+    const footprintByCity = new Map(footprintMarkets.map((m) => [m.name.toLowerCase(), m]));
+    const out: GeoMarket[] = [];
+    for (const d of demand) {
+      const key = d.city.toLowerCase();
+      const existing = footprintByCity.get(key);
+      if (existing) {
+        // enrich the footprint market with demand signal, don't duplicate
+        existing.demandScore = d.demandScore;
+        existing.demandReason = d.reason;
+        continue;
+      }
+      const coordKey = CITY_COORDS[key] ? key : key.replace(/\s+/g, '');
+      const coord = CITY_COORDS[coordKey];
+      if (!coord) continue; // unknown city → no fabricated coords
+      const display = d.city.replace(/\b\w/g, (c) => c.toUpperCase());
+      const zeptoOverlap = zepto.filter((z) => haversineKm(coord, z) <= 25).length;
+      const highways: GeoHighway[] = (HIGHWAY_LOOKUP[coordKey] ?? []).map((h) => ({
+        city: display,
+        nh: h.nh,
+        corridor: h.corridor,
+        sites: h.sites,
+      }));
+      out.push({
+        name: display,
+        storeCount: 0,
+        clusters: [],
+        highways,
+        zeptoOverlap,
+        seed: 'demand',
+        demandScore: d.demandScore,
+        demandReason: d.reason,
+      });
+    }
+    return out;
   }
 
   private inMemory(cities: StoreCity[], zepto: ZeptoStore[]): GeoMarket[] {

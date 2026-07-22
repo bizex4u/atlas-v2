@@ -140,6 +140,12 @@ export type Market = {
   budgetAllocation: string;
   /** Ties this row to a Geo market for provenance validation */
   geoMarketId?: string;
+  /** 0-100 demand signal — city where evidence shows real brand demand
+   *  ("advertise where interest is high"). A market with demandScore > 0 has
+   *  real geo signal even when storeCount is 0. */
+  demandScore?: number;
+  /** Evidence-cited reason this city is a demand market. */
+  demandReason?: string;
   /** Evidence supporting selection / enrichment of this market */
   evidence?: EvidenceReference[];
   freshness?: Freshness;

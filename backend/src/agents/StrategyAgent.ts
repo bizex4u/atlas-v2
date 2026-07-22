@@ -161,6 +161,8 @@ ${JSON.stringify(payload).slice(0, 20000)}`;
           clusters: geo.clusters,
           highways: geo.highways,
           zeptoOverlap: geo.zeptoOverlap,
+          demandScore: geo.demandScore,
+          demandReason: geo.demandReason,
           evidence: evidenceRefs,
         };
       });
