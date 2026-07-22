@@ -314,6 +314,24 @@ type ProviderCallResult = {
   usage: TokenUsage | null;
 };
 
+// Global Groq request gate — serialize + space calls so the pipeline's
+// parallel extractors don't fire at Groq simultaneously and blow the
+// free-tier per-minute rate limit (429 cascade → retries → hang). Each
+// Groq call waits its turn behind the previous, plus a min gap.
+const GROQ_MIN_GAP_MS = Number(process.env.GROQ_MIN_GAP_MS ?? 1200);
+let groqChain: Promise<void> = Promise.resolve();
+let groqLastAt = 0;
+async function groqGate(): Promise<void> {
+  const mine = groqChain.then(async () => {
+    const wait = Math.max(0, groqLastAt + GROQ_MIN_GAP_MS - Date.now());
+    if (wait > 0) await new Promise((r) => setTimeout(r, wait));
+    groqLastAt = Date.now();
+  });
+  // keep the chain going even if a link rejects
+  groqChain = mine.catch(() => undefined);
+  await mine;
+}
+
 async function callGroq(
   systemPrompt: string,
   userMessage: string,
@@ -328,6 +346,7 @@ async function callGroq(
     for (let attempt = 0; attempt <= maxRetries; attempt++) {
       if (signal?.aborted) throw new Error('aborted');
       try {
+        await groqGate(); // serialize + space to respect free-tier rate limit
         const completion = await client.chat.completions.create(
           {
             model,
@@ -372,7 +391,11 @@ async function callGroq(
           );
         }
         if (!isRetryable(err) || attempt === maxRetries) break;
-        await new Promise((r) => setTimeout(r, 1500 * (attempt + 1)));
+        // On 429 (rate limit) back off harder — free tier needs the minute to
+        // roll over; a fast retry just 429s again.
+        const is429 = /429|rate limit/i.test(errMessage(err));
+        const delay = is429 ? 6000 * (attempt + 1) : 1500 * (attempt + 1);
+        await new Promise((r) => setTimeout(r, delay));
       }
     }
   }
